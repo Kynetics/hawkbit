@@ -122,7 +122,7 @@ Why Software Updates in IoT? Having software update capabilities ensures a secur
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kynetics.github.io/hawkbit/gettingstarted/</guid>
-      <description>On Sandbox We offer a sandbox installation that is free for everyone to try out hawkBit&amp;rsquo;s Management UI, Management API, and Direct Device Integration API: &amp;nbsp; &amp;nbsp; https://hawkbit.eclipse.org
+      <description>On Sandbox We offer a sandbox installation that is free for everyone to try out hawkBit&amp;rsquo;s Management UI, Management API, and Direct Device Integration API: &amp;nbsp; &amp;nbsp; https://hawkbit.eclipseprojects.io
 The sandbox is a shared installation that will be reset from time to time. Therefore, it is not allowed to upload any personal data.
  In addition, the following vendors offer free trial accounts for their Eclipse hawkBit compatible products:
  Bosch IoT Rollouts (by Bosch.</description>
