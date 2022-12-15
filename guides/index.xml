@@ -2,43 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guides on Eclipse hawkBit</title>
-    <link>https://www.eclipse.org/hawkbit/guides/</link>
+    <link>https://kynetics.github.io/hawkbit/guides/</link>
     <description>Recent content in Guides on Eclipse hawkBit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hawkbit/guides/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://kynetics.github.io/hawkbit/guides/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Run hawkBit</title>
-      <link>https://www.eclipse.org/hawkbit/guides/runhawkbit/</link>
+      <link>https://kynetics.github.io/hawkbit/guides/runhawkbit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/guides/runhawkbit/</guid>
+      <guid>https://kynetics.github.io/hawkbit/guides/runhawkbit/</guid>
       <description>&lt;p&gt;In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the hawkBit example modules and update server.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Feign Client</title>
-      <link>https://www.eclipse.org/hawkbit/guides/feignclient/</link>
+      <link>https://kynetics.github.io/hawkbit/guides/feignclient/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/guides/feignclient/</guid>
+      <guid>https://kynetics.github.io/hawkbit/guides/feignclient/</guid>
       <description>&lt;p&gt;In this guide we describe how to create a &lt;a href=&#34;https://github.com/Netflix/feign&#34;&gt;Feign&lt;/a&gt; Rest Client based on a  &lt;a href=&#34;http://projects.spring.io/spring-boot/&#34;&gt;Spring Boot&lt;/a&gt; Application.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Clustering</title>
-      <link>https://www.eclipse.org/hawkbit/guides/clustering/</link>
+      <link>https://kynetics.github.io/hawkbit/guides/clustering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/guides/clustering/</guid>
+      <guid>https://kynetics.github.io/hawkbit/guides/clustering/</guid>
       <description>&lt;p&gt;hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to setup your own cluster. You can find additional information in the &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md&#34;&gt;hawkBit runtimes&amp;rsquo;s README&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Custom Theme</title>
-      <link>https://www.eclipse.org/hawkbit/guides/customtheme/</link>
+      <link>https://kynetics.github.io/hawkbit/guides/customtheme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/guides/customtheme/</guid>
+      <guid>https://kynetics.github.io/hawkbit/guides/customtheme/</guid>
       <description>&lt;p&gt;This guide provides details about using and creating themes that control the visual look of Eclipse hawkBit Management UI. Theme customization is done using Sass, which is an extension of CSS (Cascading Style Sheets).&lt;/p&gt;</description>
     </item>
     

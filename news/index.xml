@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eclipse hawkBit</title>
-    <link>https://www.eclipse.org/hawkbit/news/</link>
+    <link>https://kynetics.github.io/hawkbit/news/</link>
     <description>Recent content on Eclipse hawkBit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hawkbit/news/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://kynetics.github.io/hawkbit/news/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Eclipse hawkBit 0.2.0 - First Release</title>
-      <link>https://www.eclipse.org/hawkbit/news/2018-07-26-first-release/</link>
+      <link>https://kynetics.github.io/hawkbit/news/2018-07-26-first-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/news/2018-07-26-first-release/</guid>
+      <guid>https://kynetics.github.io/hawkbit/news/2018-07-26-first-release/</guid>
       <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015 and with version 0.2.0 a first release is available.
 In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get started in seconds.</description>
     </item>

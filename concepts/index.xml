@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Concepts on Eclipse hawkBit</title>
-    <link>https://www.eclipse.org/hawkbit/concepts/</link>
+    <link>https://kynetics.github.io/hawkbit/concepts/</link>
     <description>Recent content in Concepts on Eclipse hawkBit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hawkbit/concepts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://kynetics.github.io/hawkbit/concepts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Authentication</title>
-      <link>https://www.eclipse.org/hawkbit/concepts/authentication/</link>
+      <link>https://kynetics.github.io/hawkbit/concepts/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/concepts/authentication/</guid>
+      <guid>https://kynetics.github.io/hawkbit/concepts/authentication/</guid>
       <description>&lt;p&gt;A hawkBit update server can be accessed in four different ways:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -24,37 +24,37 @@
     
     <item>
       <title>Authorization</title>
-      <link>https://www.eclipse.org/hawkbit/concepts/authorization/</link>
+      <link>https://kynetics.github.io/hawkbit/concepts/authorization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/concepts/authorization/</guid>
+      <guid>https://kynetics.github.io/hawkbit/concepts/authorization/</guid>
       <description>&lt;p&gt;Authorization is handled separately for &lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; and &lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; (where successful authentication includes full authorization) and &lt;em&gt;Management API&lt;/em&gt; and &lt;em&gt;UI&lt;/em&gt; which is based on Spring security &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java&#34;&gt;authorities&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Data Model</title>
-      <link>https://www.eclipse.org/hawkbit/concepts/datamodel/</link>
+      <link>https://kynetics.github.io/hawkbit/concepts/datamodel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/concepts/datamodel/</guid>
+      <guid>https://kynetics.github.io/hawkbit/concepts/datamodel/</guid>
       <description>&lt;p&gt;The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Rollout Management</title>
-      <link>https://www.eclipse.org/hawkbit/concepts/rollout-management/</link>
+      <link>https://kynetics.github.io/hawkbit/concepts/rollout-management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/concepts/rollout-management/</guid>
+      <guid>https://kynetics.github.io/hawkbit/concepts/rollout-management/</guid>
       <description>&lt;p&gt;Software update operations in large scale IoT scenarios with hundreds of thousands of devices require special handling.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Target State Machine</title>
-      <link>https://www.eclipse.org/hawkbit/concepts/targetstate/</link>
+      <link>https://kynetics.github.io/hawkbit/concepts/targetstate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/concepts/targetstate/</guid>
+      <guid>https://kynetics.github.io/hawkbit/concepts/targetstate/</guid>
       <description>&lt;p&gt;A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &amp;ldquo;I am here&amp;rdquo;, &amp;ldquo;I am working on a provisioning&amp;rdquo;, &amp;ldquo;I have finished a provisioning&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     

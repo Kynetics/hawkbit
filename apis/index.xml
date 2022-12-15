@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apis on Eclipse hawkBit</title>
-    <link>https://www.eclipse.org/hawkbit/apis/</link>
+    <link>https://kynetics.github.io/hawkbit/apis/</link>
     <description>Recent content in Apis on Eclipse hawkBit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hawkbit/apis/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://kynetics.github.io/hawkbit/apis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Management API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/management_api/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/management_api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/management_api/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/management_api/</guid>
       <description>&lt;p&gt;The Management API is a RESTful API that enables to perform Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Direct Device Integration API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/ddi_api/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/ddi_api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/ddi_api/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/ddi_api/</guid>
       <description>&lt;p&gt;The hawkBit &lt;a href=&#34;https://github.com/eclipse/hawkbit&#34;&gt;update server&lt;/a&gt; provides REST resources which are consumed by the device to retrieve software update tasks.
 This API is based on HTTP standards and a polling mechanism.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Device Management Federation API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/dmf_api/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/dmf_api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/dmf_api/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/dmf_api/</guid>
       <description>&lt;p&gt;The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object. Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
 Currently, bodies of messages are based on JSON.&lt;/p&gt;</description>
     </item>

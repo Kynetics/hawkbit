@@ -2,97 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eclipse hawkBit</title>
-    <link>https://www.eclipse.org/hawkbit/apis/mgmt/</link>
+    <link>https://kynetics.github.io/hawkbit/apis/mgmt/</link>
     <description>Recent content on Eclipse hawkBit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hawkbit/apis/mgmt/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://kynetics.github.io/hawkbit/apis/mgmt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Configuration API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/tenant/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/tenant/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/tenant/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/tenant/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Target Filters API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/targetfilters/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/targetfilters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/targetfilters/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/targetfilters/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Rollouts API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/rollouts/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/rollouts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/rollouts/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/rollouts/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Distribution Set Tag API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsettag/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsettag/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsettag/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsettag/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Target Tag API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/targettag/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/targettag/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/targettag/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/targettag/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Software Modules API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/softwaremodules/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/softwaremodules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/softwaremodules/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/softwaremodules/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Distribution Set Types API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsettypes/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsettypes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsettypes/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsettypes/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Distribution Sets API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsets/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsets/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsets/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Software Module Types API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/softwaremoduletypes/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/softwaremoduletypes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/softwaremoduletypes/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/softwaremoduletypes/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Targets API</title>
-      <link>https://www.eclipse.org/hawkbit/apis/mgmt/targets/</link>
+      <link>https://kynetics.github.io/hawkbit/apis/mgmt/targets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.eclipse.org/hawkbit/apis/mgmt/targets/</guid>
+      <guid>https://kynetics.github.io/hawkbit/apis/mgmt/targets/</guid>
       <description> </description>
     </item>
     

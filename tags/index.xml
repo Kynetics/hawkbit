@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Eclipse hawkBit</title>
-    <link>https://www.eclipse.org/hawkbit/tags/</link>
+    <link>https://kynetics.github.io/hawkbit/tags/</link>
     <description>Recent content in Tags on Eclipse hawkBit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hawkbit/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://kynetics.github.io/hawkbit/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

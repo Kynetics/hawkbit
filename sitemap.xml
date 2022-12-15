@@ -3,165 +3,165 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/news/2018-07-26-first-release/</loc>
+    <loc>https://kynetics.github.io/hawkbit/news/2018-07-26-first-release/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/tenant/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/tenant/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/targetfilters/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/targetfilters/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/rollouts/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/rollouts/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsettag/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsettag/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/targettag/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/targettag/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/softwaremodules/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/softwaremodules/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsettypes/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsettypes/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/distributionsets/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsets/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/softwaremoduletypes/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/softwaremoduletypes/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/targets/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/targets/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/whatishawkbit/</loc>
+    <loc>https://kynetics.github.io/hawkbit/whatishawkbit/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/gettingstarted/</loc>
+    <loc>https://kynetics.github.io/hawkbit/gettingstarted/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/guides/runhawkbit/</loc>
+    <loc>https://kynetics.github.io/hawkbit/guides/runhawkbit/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/guides/feignclient/</loc>
+    <loc>https://kynetics.github.io/hawkbit/guides/feignclient/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/guides/clustering/</loc>
+    <loc>https://kynetics.github.io/hawkbit/guides/clustering/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/guides/customtheme/</loc>
+    <loc>https://kynetics.github.io/hawkbit/guides/customtheme/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/features/</loc>
+    <loc>https://kynetics.github.io/hawkbit/features/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/concepts/authentication/</loc>
+    <loc>https://kynetics.github.io/hawkbit/concepts/authentication/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/concepts/authorization/</loc>
+    <loc>https://kynetics.github.io/hawkbit/concepts/authorization/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/concepts/datamodel/</loc>
+    <loc>https://kynetics.github.io/hawkbit/concepts/datamodel/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/concepts/rollout-management/</loc>
+    <loc>https://kynetics.github.io/hawkbit/concepts/rollout-management/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/concepts/targetstate/</loc>
+    <loc>https://kynetics.github.io/hawkbit/concepts/targetstate/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/architecture/</loc>
+    <loc>https://kynetics.github.io/hawkbit/architecture/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/ui/</loc>
+    <loc>https://kynetics.github.io/hawkbit/ui/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/management_api/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/management_api/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/ddi_api/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/ddi_api/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/dmf_api/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/dmf_api/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/community/</loc>
+    <loc>https://kynetics.github.io/hawkbit/community/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/release-notes/</loc>
+    <loc>https://kynetics.github.io/hawkbit/release-notes/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/mgmt/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/news/</loc>
+    <loc>https://kynetics.github.io/hawkbit/news/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/rest-api/</loc>
+    <loc>https://kynetics.github.io/hawkbit/rest-api/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/apis/</loc>
+    <loc>https://kynetics.github.io/hawkbit/apis/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/categories/</loc>
+    <loc>https://kynetics.github.io/hawkbit/categories/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/concepts/</loc>
+    <loc>https://kynetics.github.io/hawkbit/concepts/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/</loc>
+    <loc>https://kynetics.github.io/hawkbit/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/guides/</loc>
+    <loc>https://kynetics.github.io/hawkbit/guides/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/sandbox/</loc>
+    <loc>https://kynetics.github.io/hawkbit/sandbox/</loc>
   </url>
   
   <url>
-    <loc>https://www.eclipse.org/hawkbit/tags/</loc>
+    <loc>https://kynetics.github.io/hawkbit/tags/</loc>
   </url>
   
 </urlset>
