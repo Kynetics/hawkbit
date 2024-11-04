@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Clustering - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -376,13 +376,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,46 +399,29 @@
 			<h1>Clustering </h1>
 
 			<p>hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to setup your own cluster. You can find additional information in the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md">hawkBit runtimes&rsquo;s README</a>.</p>
-
 <h2 id="big-picture">Big picture</h2>
-
-<p><img src="../../images/overall_cluster.png" alt="" /></p>
-
+<p><img src="../../images/overall_cluster.png" alt=""></p>
 <h2 id="events">Events</h2>
-
 <p>Event communication between nodes is based on <a href="https://cloud.spring.io/spring-cloud-bus/">Spring Cloud Bus</a> and <a href="http://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle/">Spring Cloud Stream</a>. There are different <a href="http://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle/#_binders">binder implementations</a> available. The <em>hawkbit Update Server</em> uses RabbitMQ binder. Every node gets his own queue to receive cluster events, the default payload is JSON.
 If an event is thrown locally at one node, it will be automatically delivered to all other available nodes via the Spring Cloud Bus&rsquo;s topic exchange:</p>
-
-<p><img src="../../images/eventing-within-cluster.png" alt="" /></p>
-
+<p><img src="../../images/eventing-within-cluster.png" alt=""></p>
 <p>Via the ServiceMatcher you can check whether an event happened locally at one node or on a different node.
 <code>serviceMatcher.isFromSelf(event)</code></p>
-
 <h2 id="caching">Caching</h2>
-
 <p>Every node is maintaining its own caches independent from other nodes. So there is no globally shared/synchronized cache instance within the cluster. In order to keep nodes in sync a TTL (time to live) can be set for all caches to ensure that after some time the cache is refreshed from the database. To enable the TTL just set the property &ldquo;hawkbit.cache.global.ttl&rdquo; (value in milliseconds). Of course you can implement a shared cache, e.g. Redis.
 See <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-autoconfigure/src/main/java/org/eclipse/hawkbit/autoconfigure/cache/CacheAutoConfiguration.java">CacheAutoConfiguration</a></p>
-
 <h2 id="schedulers">Schedulers</h2>
-
 <p>Every node has multiple schedulers which run after a defined period of time. All schedulers always run on every node. This has to be kept in mind e.g. if the scheduler executes critical code which has to be executed only once.</p>
-
 <h2 id="known-constraints">Known constraints</h2>
-
 <h3 id="ui-sessions">UI sessions</h3>
-
 <p>As of today hawkBit is not storing user sessions in a shared, cluster wide cache. Session is only bound to the node where the login took place. If this node is going down for whatever reason, the session is lost and the user is forced to login again.
 In case that&rsquo;s not an option, you can help yourself by introducing a shared session cache based on e.g. Redis.
 Furthermore hawkBit is not supporting session stickiness out of the box either. However most of the well known load balancer out there can solve this issue.</p>
-
 <h3 id="caching-of-download-ids">Caching of download IDs</h3>
-
 <p>The downloadId is generated and stored in the DownloadIdCache. It is used for downloading an artifact.
 In hawkBit exists an interface called &ldquo;<a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-core/src/main/java/org/eclipse/hawkbit/cache/DownloadIdCache.java">DownloadIdCache</a>&rdquo; and one implementation of it: &ldquo;DefaultDownloadIdCache&rdquo;. This default implementation can&rsquo;t be used within a cluster. Its containing data is only available inside one node and can&rsquo;t be shared with other nodes. E.g. the downloadId which is stored in this cache after authentication on node A can only be used for downloading the artifact by node A.
 In a cluster-capable environment this fact can lead to issues as it could happen, that the downloadId is stored on node A and node B would like to download the artifact by means of the downloadId which is not available on node B. To solve this issue you can use a cluster-shared cache e.g. Redis or create a new cluster-aware implementation of the interface &ldquo;DownloadIdCache&rdquo;.</p>
-
 <h3 id="denial-of-service-dos-filter">Denial-of-Service (DoS) filter</h3>
-
 <p>hawkBit owns the feature of guarding itself from DoS attacks, a <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DosFilter.java">DoS filter</a>. It reduces the maximum number of requests per seconds which can be configured for read and write requests.
 This mechanism is only working for every node separately, i.e. in a cluster environment the worst-case behaviour would be that the maximum number of requests per seconds will be increased to its product if every request is handled by a different node.
 The same constraint exists with the validator to check if a user tried too many logins within a defined period of time.</p>
@@ -456,7 +434,7 @@ The same constraint exists with the validator to check if a user tried too many 
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -476,7 +454,7 @@ The same constraint exists with the validator to check if a user tried too many 
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -548,8 +526,8 @@ The same constraint exists with the validator to check if a user tried too many 
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

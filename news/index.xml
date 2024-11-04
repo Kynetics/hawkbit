@@ -16,5 +16,16 @@
 In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get started in seconds.</description>
     </item>
     
+    <item>
+      <title>Eclipse hawkBit upgrade to Eclipse Public License - v 2.0</title>
+      <link>https://kynetics.github.io/hawkbit/news/2023-09-21-epl2.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kynetics.github.io/hawkbit/news/2023-09-21-epl2.0/</guid>
+      <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015.
+In this article, we want to give an overview of the latest highlights of hawkBit license changes.
+hawkBit license upgraded to Eclipse Public License - v 2.0 Based on the issues Switch to EPL 2.</description>
+    </item>
+    
   </channel>
 </rss>

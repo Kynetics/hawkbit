@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Target State Machine - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -376,13 +376,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,9 +399,7 @@
 			<h1>Target State Machine </h1>
 
 			<p>A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &ldquo;I am here&rdquo;, &ldquo;I am working on a provisioning&rdquo;, &ldquo;I have finished a provisioning&rdquo;.</p>
-
 <h2 id="defined-states">Defined states</h2>
-
 <table>
 <thead>
 <tr>
@@ -414,38 +407,31 @@
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>UNKNOWN</td>
 <td>Set by default for a pre-commissioned target until first status update received from the target. Is the initial starting point for targets created by UI or management API.</td>
 </tr>
-
 <tr>
 <td>IN_SYNC</td>
 <td>Assigned <em>Distribution Set</em> is installed.</td>
 </tr>
-
 <tr>
 <td>PENDING</td>
 <td>Installation of assigned <em>Distribution Set</em> is not yet confirmed.</td>
 </tr>
-
 <tr>
 <td>ERROR</td>
 <td>Installation of assigned <em>Distribution Set</em> has failed.</td>
 </tr>
-
 <tr>
 <td>REGISTERED</td>
 <td>Target registered at the update server but no <em>Distribution Set</em> assigned. Is the initial starting point for plug-and-play devices.</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="transitions">Transitions</h2>
-
-<p><img src="../../images/architecture/targetStatusStates.png" alt="" /></p>
+<p><img src="../../images/architecture/targetStatusStates.png" alt=""></p>
 
 			<aside class="copyright" role="note">
   <div class="logo">
@@ -455,7 +441,7 @@
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -475,7 +461,7 @@
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -547,8 +533,8 @@
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

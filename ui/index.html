@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Management UI - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -379,13 +379,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -406,10 +401,7 @@
 		<div class="wrapper">
 			<h1>Management UI </h1>
 
-			
-
-<p>The hawkBit Management UI provides several views for the different use cases:</p>
-
+			<p>The hawkBit Management UI provides several views for the different use cases:</p>
 <ul>
 <li><em>Deployment Management</em> view for target administration and manual deployment.</li>
 <li><em>Distribution Management</em> view software repository metadata management.</li>
@@ -417,64 +409,70 @@
 <li><em>Target Filter Management</em> view to manage target filters that can be used both in Deployment and Rollout Management views.</li>
 <li><em>Rollout Management</em> for large scale rollout orchestration.</li>
 </ul>
-
 <h2 id="deployment-management">Deployment Management</h2>
-
 <h3 id="purpose">Purpose</h3>
-
 <p>Target status overview, target management and manual deployments.</p>
-
 <h3 id="feature-explained">Feature explained</h3>
-
 <ul>
-<li>Target Status: check status of all targets.</li>
-
-<li><p>Target list allows filters based on:</p>
-
+<li>
+<p>Target Status: check status of all targets.</p>
+</li>
+<li>
+<p>Target list allows filters based on:</p>
 <ul>
 <li>Assigned/installed <em>DistributionSet</em> (drag and drop a set on the filter icon on the top of the list)</li>
 <li>Target update status: click 1-X status to reduce the list of targets that have one of them.</li>
 <li>Target tag: click 1-X tags to reduce the list to targets that have one of them.</li>
 <li>Name, description: use search button on the top of the list.</li>
-</ul></li>
-
-<li><p><em>DistributionSet</em> list allows filters based on:</p>
-
+<li>Target type: open Type Filter section to show targets of a specific type</li>
+</ul>
+</li>
+<li>
+<p><em>DistributionSet</em> list allows filters based on:</p>
 <ul>
 <li><em>DistributionSet</em> tag: click 1-X tags to reduce the list of sets that have one of them.</li>
 <li>Name, description: use search button on the top of the list.</li>
-</ul></li>
-
-<li><p>Start roll out by drag and drop targets on a DS.</p></li>
-
-<li><p>Target list supports CTRL-A for &ldquo;select all&rdquo;.</p></li>
-
-<li><p>Delete sets, tags or targets by dragging them on delete icon.</p></li>
-
-<li><p>Select <em>Target</em> to see <em>Action</em> History.</p></li>
-
-<li><p>Bulk target upload: create bulk targets by upload.</p></li>
 </ul>
-
-<p>Hints for bulk upload:
-- Expected file type : csv.
-- Expected file format : Each line with two values (ControllerID,Target Name). ControllerID is mandatory.
-- Example:</p>
-
+</li>
+<li>
+<p>Start roll out by drag and drop targets on a DS.</p>
+</li>
+<li>
+<p>Target list supports CTRL-A for &ldquo;select all&rdquo;.</p>
+</li>
+<li>
+<p>Select <em>Target</em> to see <em>Action</em> History.</p>
+</li>
+<li>
+<p>Bulk target upload: create bulk targets by upload.</p>
+</li>
+<li>
+<p>DS invalidation allows to mark broken updates and avoid the distribution of such</p>
+</li>
+</ul>
+<p>Hints for bulk upload:</p>
+<ul>
+<li>Expected file type : csv.</li>
+<li>Expected file format : Each line with two values (ControllerID,Target Name). ControllerID is mandatory.</li>
+<li>Example:</li>
+</ul>
 <pre><code>Controller_id_1,targetName1
 Controller_id_2,targetName2
 </code></pre>
-
-<p><img src="../images/ui/deployment_mgmt.png" alt="Deployment Management view" /></p>
-
+<p><img src="../images/ui/deployment_mgmt.png" alt="Deployment Management view"></p>
+<h3 id="distribution-set-invalidation">Distribution set invalidation</h3>
+<p>It is possible to mark broken updates and avoid the distribution of such by invalidating the corresponding distribution
+set in the Distributions list of the Deployment view.</p>
+<p>Invalidating a distribution set removes all auto-assignments that reference this distribution set. Optionally, all
+rollouts that reference the distribution set can be stopped and existing update actions are removed, either by a
+soft-cancel or a forced-cancel.</p>
+<p>Invalidated distribution sets cannot be valid again, but remain invalid. They cannot be assigned to targets, neither
+through a rollout, auto-assignment nor a single assignment.</p>
+<p><img src="../images/ui/deployment_ds_invalidation.png" alt="Distribution set invalidation"></p>
 <h2 id="distribution-management">Distribution Management</h2>
-
 <h3 id="purpose-1">Purpose</h3>
-
 <p>Distribution Set view to manage software repository metadata, i.e. Distribution Sets, their Software Modules and the respective types.</p>
-
 <h3 id="features-explained">Features explained</h3>
-
 <ul>
 <li>Browse, create, delete and update Distribution Sets.</li>
 <li>Browse, create, delete and update Distribution Set Types.</li>
@@ -482,99 +480,76 @@ Controller_id_2,targetName2
 <li>Browse, create, delete and update Software Module Types.</li>
 <li>Assign Software Modules to Distribution Sets.</li>
 </ul>
-
-<p><img src="../images/ui/distribution_mgmt.png" alt="Distribution Management view" /></p>
-
+<p><img src="../images/ui/distribution_mgmt.png" alt="Distribution Management view"></p>
 <h2 id="artifact-management">Artifact Management</h2>
-
 <h3 id="purpose-2">Purpose</h3>
-
 <p>Software artifact management, both metadata (i.e. Software Modules) and artifacts themselves.</p>
-
 <h3 id="features-explained-1">Features explained</h3>
-
 <ul>
 <li>Browse, create, delete and update Software Modules.</li>
 <li>Browse, create, delete and update Software Module Types.</li>
 <li>Upload and delete software artifacts for a module.</li>
 </ul>
-
-<p><img src="../images/ui/artifact_mgmt.png" alt="Artifact Management view" /></p>
-
+<p><img src="../images/ui/artifact_mgmt.png" alt="Artifact Management view"></p>
 <h2 id="rollout-management">Rollout Management</h2>
-
 <h3 id="purpose-3">Purpose</h3>
-
 <p>Software rollout in large scale, rollout status overview and rollout management.</p>
-
 <h3 id="features-explained-2">Features explained</h3>
-
 <ul>
 <li>Create, update, copy and delete of rollouts.</li>
 <li>Start, pause and resume of rollouts.</li>
 <li>Progress monitoring for the entire rollout and the individual groups.</li>
 <li>Drill down to see the groups in a rollout and targets in each group.</li>
 <li>Rollout attributes:
-
 <ul>
 <li>Selection of targets as input for the rollout based on <em>target filter</em></li>
 <li>Selection of <em>distribution set</em></li>
 <li>Auto-splitting of the input target list based on <em>group number</em> defined</li>
 <li><em>Trigger threshold</em> to define the percentage of installation to be completed , to trigger the start of next group</li>
-<li><em>Error threshold</em> defines the percentage of error tolerance of a group before calling for a emergency shutdown of a rollout</li>
-</ul></li>
+<li><em>Error threshold</em> defines the percentage of error tolerance of a group before calling for an emergency shutdown of a rollout</li>
 </ul>
-
-<p><img src="../images/ui/rollout_mgmt.png" alt="Rollout Management view" /></p>
-
-<p><img src="../images/ui/rollout_groups.png" alt="Rollout Management view" /></p>
-
+</li>
+</ul>
+<p><img src="../images/ui/rollout_mgmt.png" alt="Rollout Management view"></p>
+<p><img src="../images/ui/rollout_groups.png" alt="Rollout Management view"></p>
 <div class="admonition note">
 <p class="admonition-title"></p>
 <p>Deletion of targets which are in a rollout, changes the rollout statistics.</p>
 </div>
-
 <h2 id="target-filter-management">Target Filter Management</h2>
-
 <h3 id="purpose-4">Purpose</h3>
-
 <p>Custom target filter overview and filter management.</p>
-
 <h3 id="features-explained-3">Features explained</h3>
-
 <ul>
 <li>Custom target filter allows user to filter targets by defining custom query.</li>
 <li>Displays custom target filter list and user can search any particular filter.</li>
 <li>Create, update and delete features are supported for target filters.</li>
 <li>Auto assignment of a distribution set to filtered targets.</li>
 </ul>
-
 <h3 id="how-to-filter">How to Filter</h3>
-
 <p>The basic syntax to filter is: <code>field&lt;basic_operator&gt;value &lt;composite_operator&gt; field&lt;basic_operator&gt;value &lt;...&gt;</code></p>
-
 <ul>
 <li><code>field</code>: is the name of the resource field.</li>
-<li><code>value</code>: is the value of the target field</li>
+<li><code>value</code>: is the expected value of the target field.
+<ul>
+<li>Use <code>*</code> for wildcard matches.</li>
+</ul>
+</li>
 <li><code>&lt;basic_operator&gt;</code>: Are operators to do simple queries. Supported basic operators are:
-
 <ul>
 <li><code>==</code> : equal</li>
 <li><code>!=</code> : not equal</li>
 <li>Use <code>=IN=</code> for &lsquo;in&rsquo; parameter.(Example: name=IN=(target1,target2).</li>
-</ul></li>
+</ul>
+</li>
 <li><code>&lt;composite_operator&gt;</code>: Are operators to join simple queries: Supported composite operators are:
-
 <ul>
 <li><code>and</code></li>
 <li><code>or</code></li>
-<li>Use <code>=IN=</code> for &lsquo;in&rsquo; parameter.(Example: name=IN=(target1,target2).</li>
-<li>Use <code>*</code> for wildcard matches.</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="examples">Examples</h3>
-
 <table>
 <thead>
 <tr>
@@ -582,66 +557,51 @@ Controller_id_2,targetName2
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>updatestatus==error</td>
 <td>Gives all targets in ‘error’ state.</td>
 </tr>
-
 <tr>
 <td>controllerId!=192.168.2.42</td>
 <td>Gives all targets that do not have the controllerId 192.168.2.42.</td>
 </tr>
-
 <tr>
 <td>name==*CCU*</td>
 <td>Gives all targets which contain the term ‘CCU’ in there name.</td>
 </tr>
-
 <tr>
 <td>name==*CCU* or description==*CCU*</td>
 <td>Gives all targets that either have the term ‘CCU’ in their name or their description.</td>
 </tr>
-
 <tr>
 <td>name==*SHC* and description==*SHC*</td>
 <td>Gives all targets that have the term SHC in their name and their description.</td>
 </tr>
-
 <tr>
 <td>name==CCU* and updatestatus==pending</td>
 <td>Gives all targets with their name starting with ‘CCU’ and which are in ‘pending’ state.</td>
 </tr>
-
 <tr>
 <td>(assignedds.name==‘ECU-DS’ and description==test) or updatestatus!=error</td>
 <td>Gives all targets which are either assigned to ‘ECU-DS’ and have description equals to ‘test’ or which are not in error status.</td>
 </tr>
-
 <tr>
 <td>(updatestatus!=In_sync or updatestatus!=error) and name==*SHC1*</td>
 <td>Gives all targets that do not have the update status In_sync or error and that contains the term SHC1 in their name.</td>
 </tr>
-
 <tr>
 <td>(updatestatus!=error or updatestatus!=pending) and (name==*CCU* or description==*CCU*)</td>
 <td>Gives all targets that either have the term ‘CCU’ in their name or their description and that either have the <em>update status</em> not in state error or pending.</td>
 </tr>
 </tbody>
 </table>
-
-<p><img src="../images/ui/target_filter.png" alt="Target Filter Management view" /></p>
-
+<p><img src="../images/ui/target_filter.png" alt="Target Filter Management view"></p>
 <h3 id="auto-assignment">Auto assignment</h3>
-
 <p>It is possible to assign some distribution set with different action types (<em>forced</em>, <em>soft</em>, or <em>download only</em>) to all targets that belong to the corresponding custom target filter, including the ones, that are registered later on.</p>
-
 <p>In order to activate the auto-assignment, one should first click on <em>Auto assignment</em> cell in Custom Filters table, and then check the corresponding checkbox. After that, the action type and distribution set for auto-assignment should be selected and confirmed.</p>
-
 <p>As long as the auto-assignment stays active, the scheduler will try to assign selected distribution set to corresponding custom filter targets, that have never seen it before.</p>
-
-<p><img src="../images/ui/target_filter_auto_assignment.png" alt="Auto assignment" /></p>
+<p><img src="../images/ui/target_filter_auto_assignment.png" alt="Auto assignment"></p>
 
 
 			<aside class="copyright" role="note">
@@ -652,7 +612,7 @@ Controller_id_2,targetName2
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -672,7 +632,7 @@ Controller_id_2,targetName2
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -744,8 +704,8 @@ Controller_id_2,targetName2
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

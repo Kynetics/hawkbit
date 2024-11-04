@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Custom Theme - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -376,13 +376,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,52 +399,50 @@
 			<h1>Custom Theme </h1>
 
 			<p>This guide provides details about using and creating themes that control the visual look of Eclipse hawkBit Management UI. Theme customization is done using Sass, which is an extension of CSS (Cascading Style Sheets).</p>
-
 <p>The mechanism described below is the rather simple case by customizing the theme by means of configuring a set of variables as defined by the hawkBit default theme. A full customization be means of copying the hawkBit theme and customize it completely is not described here but of course possible.</p>
-
 <h2 id="example-app">Example App</h2>
-
 <p>An example application with customized theme can be found <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-custom-theme-example">here</a>.</p>
-
 <h2 id="overview">Overview</h2>
-
 <p>Vaadin separates the appearance of the user interface from its logic using themes. Themes can include Sass or CSS style sheets, custom HTML layouts, and any necessary graphics.</p>
-
 <p>Theme resources can also be accessed from application code as ThemeResource objects. Custom themes are placed under the src/main/resources/VAADIN/themes/ folder of the application.</p>
-
 <p>This location is fixed &ndash; the VAADIN folder contains static resources that are served by the Vaadin servlet. The servlet augments the files stored in the folder by resources found from corresponding VAADIN folders contained in JARs in the class path.The base theme and all the corresponding custom themes are placed under the above mentioned folder.</p>
-
 <p>If a new custom theme has to be created, it should always be placed under the src/main/resources/VAADIN/themes/ folder.</p>
-
 <p>Every custom theme should always refer the base theme and customization can be done by the use of variables mentioned in the XXXXvariable.scss. For details of the creation of the custom theme please refer the next section.</p>
-
 <h2 id="procedure-to-create-a-theme">Procedure to create a theme</h2>
-
 <ul>
-<li>Create a new folder <strong>&ldquo;XXXtheme&rdquo;</strong> (significant to the new theme) under src/main/resources/VAADIN/themes/ folder.</li>
-<li>Create a folder named as <strong>&ldquo;customstyles&rdquo;</strong>.</li>
-<li>Create a <strong>XXXvariables.scss</strong> file under <strong>customstyles</strong> folder, putting all the variables inside the same file. For more details about the variables we recommend to take a look at the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-ui/src/main/resources/VAADIN/themes/hawkbit/customstyles/hawkbitvariables.scss">hawkBit defaults</a>.</li>
-<li>Create <strong>styles.scss</strong> file under the <strong>&ldquo;XXXtheme&rdquo;</strong> folder.</li>
-<li>Any images should be placed under the sub folder <strong>&ldquo;images&rdquo;</strong> folder.</li>
-
-<li><p>Within the <strong><em>styles.scss</em></strong> file, import <strong>XXXvariables.scss</strong> and the base theme (hawkBit theme as mentioned in previous chapter <strong>Overview</strong> . Please find below the syntax:</p>
-
+<li>
+<p>Create a new folder <strong>&ldquo;XXXtheme&rdquo;</strong> (significant to the new theme) under src/main/resources/VAADIN/themes/ folder.</p>
+</li>
+<li>
+<p>Create a folder named as <strong>&ldquo;customstyles&rdquo;</strong>.</p>
+</li>
+<li>
+<p>Create a <strong>XXXvariables.scss</strong> file under <strong>customstyles</strong> folder, putting all the variables inside the same file. For more details about the variables we recommend to take a look at the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-ui/src/main/resources/VAADIN/themes/hawkbit/customstyles/hawkbitvariables.scss">hawkBit defaults</a>.</p>
+</li>
+<li>
+<p>Create <strong>styles.scss</strong> file under the <strong>&ldquo;XXXtheme&rdquo;</strong> folder.</p>
+</li>
+<li>
+<p>Any images should be placed under the sub folder <strong>&ldquo;images&rdquo;</strong> folder.</p>
+</li>
+<li>
+<p>Within the <strong><em>styles.scss</em></strong> file, import <strong>XXXvariables.scss</strong> and the base theme (hawkBit theme as mentioned in previous chapter <strong>Overview</strong> . Please find below the syntax:</p>
 <pre><code class="language-css">@import &quot;../hawkbit/customstyles/hawkbitvariables&quot;;
 @import &quot;customstyles/examplevariables&quot;;
 @import &quot;../hawkbit/hawkbittheme&quot;;
 @import &quot;addons&quot;;
 
 .exampletheme {
-@include addons;
-@include hawkbittheme;
+  @include addons;
+  @include hawkbittheme;
 }
-</code></pre></li>
-
-<li><p>Finally the structure should be as in the <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-custom-theme-example/src/main/resources/VAADIN">example app</a>.</p></li>
+</code></pre>
+</li>
+<li>
+<p>Finally the structure should be as in the <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-custom-theme-example/src/main/resources/VAADIN">example app</a>.</p>
+</li>
 </ul>
-
 <h2 id="procedure-to-add-a-custom-footer">Procedure to add a custom footer</h2>
-
 <ul>
 <li>Any footer can be added by creating  &ldquo;footer.html&rdquo; in <strong>src/main/resources &ndash;&gt; VAADIN &ndash; themes &ndash;&gt; {XXXtheme} &ndash;&gt; layouts</strong> folder. An example can be found <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-ui/src/main/resources/VAADIN/themes/hawkbit/layouts/footer.html">here</a>.</li>
 </ul>
@@ -462,7 +455,7 @@
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -482,7 +475,7 @@
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -554,8 +547,8 @@
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

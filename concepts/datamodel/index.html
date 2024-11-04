@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Data Model - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -376,13 +376,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,43 +399,34 @@
 			<h1>Data Model </h1>
 
 			<p>The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other.</p>
-
-<p>It does define a hierarchy of software that starts with a distribution, which can have (sub-)modules and these may have multiple artifacts. However, it does not consider any kind of dependency definitions between modules or artifacts. As a result dependency checks if necessary have to be done outside hawkBit, i.e. on the device itself or before the entity creation in hawkBit by the origin.</p>
-
+<p>It does define a hierarchy of software that starts with a distribution, which can have (sub-)modules and these may have multiple artifacts. However, it does not consider any kind of dependency definitions between modules or artifacts. As a result, dependency checks - if necessary - have to be done outside hawkBit, i.e. on the device itself or before the entity creation in hawkBit by the origin.</p>
 <h2 id="provisioning-target-definition">Provisioning Target Definition</h2>
-
 <p>A Provisioning Target is a neutral definition that may be an actual real device (e.g. gateway, embedded sensor) or a virtual device (e.g. vehicle, smart home).</p>
-
 <p>The definition in hawkBit might reflect the transactional behavior if necessary on the device side. A vehicle might be updated device by device or as a whole. As a result one way of defining a vehicle in hawkBit could be to have one all inclusive Software Module or one module per (sub-) device.</p>
-
+<p>A Target can have, next to its defined properties (e.g. controller ID, target type, name, description, security token), a generic set of attributes and meta data, both in key:value format. Target attributes are owned and managed by the device whereas target meta data are managed by the operator. If a target is defined to be of a certain target type, then during the assignment of a distribution set, a compatibility check will be performed between the target type and distribution set type.</p>
 <h2 id="software-structure-definition">Software Structure Definition</h2>
-
 <p>The structure defines the model of the supported software by the provisioning target</p>
-
-<p>Distribution Set Type: defines a package structure that is supported by certain devices
-Consists of Software Module Types both for
-Firmware - device can have only one module of that type (e.g. the operating system)
-Software - device can have multiple modules of that type (e.g. &ldquo;Apps&rdquo;)
-Software Content Definition</p>
-
-<p>Distribution Set: can be deployed to a provisioning target
-Software Module: is a sub element of the distribution
-e.g. OS, application, firmware X, firmware Y
-Artifact: binaries for a software module. Note: the decision which artifacts have to be downloaded are done on the device side.
-e.g. Full package, signatures, binary deltas</p>
-
+<ul>
+<li>Distribution Set Type:defines a package structure that is supported by certain devices</li>
+<li>Consists of Software Module Types both for
+<ul>
+<li>Firmware - device can have only one module of that type (e.g. the operating system)</li>
+<li>Software - device can have multiple modules of that type (e.g. &ldquo;Apps&rdquo;)</li>
+</ul>
+</li>
+</ul>
+<p>Software Content Definition:</p>
+<ul>
+<li>Distribution Set: can be deployed to a provisioning target</li>
+<li>Software Module: is a sub element of the distribution, e.g. OS, application, firmware X, firmware Y</li>
+<li>Artifact: binaries for a software module. Note: the decision which artifacts have to be downloaded are done on the device side, e.g. Full package, signatures, binary deltas</li>
+</ul>
 <h2 id="entity-relationships">Entity Relationships</h2>
-
 <p>The public defined entities and their relation which are reflected by the Management API.</p>
-
 <h2 id="deleting-and-archiving-software-modules">Deleting and Archiving Software Modules</h2>
-
 <p>When a user deletes a Software Module, the update server cannot simply remove all the corresponding data. Because when the Software Module is already assigned to a Distribution Set or was assigned to a Target in the past, the hawkBit server has to make sure that remains a clean and full update history for every target. The history contains all information (e.g. name, version) of the software, which was assigned to a specific Target. Obviously storing the binary data of the artifacts is not necessary for the history purpose.</p>
-
 <p>The delete process which is performed, when there are historical connections to targets is called SoftDelete. This process marks the Software Module as deleted and removes the artifact, but it won&rsquo;t delete the meta data, which describes the SoftwareModule and the associated Artifacts. SoftwareModules, which are marked as delete won&rsquo;t be visible for the user, when he is requesting all SoftwareModules.</p>
-
 <p>Just in case there are no connections to Distribution Sets and targets the server will perform a HardDelete. This process deletes all stored data, including all meta information.</p>
-
 <div class="admonition note">
 <p class="admonition-title"></p>
 <p>In case of of a SoftDelete the unique constraints are still in place, i.e. you cannot create an entity with the same name/key. This constraint might be removed in future versions because of the impact on the user experience (i.e. he does not see the soft deleted module but cannot create a new one).</p>
@@ -454,7 +440,7 @@ e.g. Full package, signatures, binary deltas</p>
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -474,7 +460,7 @@ e.g. Full package, signatures, binary deltas</p>
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -546,8 +532,8 @@ e.g. Full package, signatures, binary deltas</p>
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

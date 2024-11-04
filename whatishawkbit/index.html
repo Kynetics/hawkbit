@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>What is hawkBit? - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -379,13 +379,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -406,45 +401,27 @@
 		<div class="wrapper">
 			<h1>What is hawkBit? </h1>
 
-			
-
-<p>Eclipse hawkBit&trade; is an domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure.</p>
-
-<p><img src="../images/hawkbit_logo.png" alt="" /></p>
-
+			<p>Eclipse hawkBit™ is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure.</p>
+<p><img src="../images/hawkbit_logo.png" alt=""></p>
 <h2 id="why-software-updates-in-iot">Why Software Updates in IoT?</h2>
-
 <p>Having software update capabilities ensures a secure IoT by means that it gives IoT projects a fighting chance against pandora&rsquo;s box that they opened the moment their devices got connected. From that moment on devices are at the forefront of IT security threats many embedded software developers historically never had to face. Shipping for instance a Linux powered device connected to the Internet without any security updates ever applied during its lifetime is kind of a suicidal act these days.</p>
-
 <p>A more charming argument for software update is that it enables agile development for hardware and hardware near development. Concepts like a minimum viable product can be applied for devices as not all features need to be ready at manufacturing time. Changes on the cloud side of the IoT project can be applied to the devices at runtime as well.</p>
-
-<p>Sometimes Software Update is a business model on its own as it makes devices much more attractive to the customer if they are updateable, i.e. they do not only buy a product because of its current feature set but make also a bet on its future capabilities. In addition new revenue streams may arise from the fact that feature extensions can potentially be monetized (e.g. Apps) without the need to design, manufacture and ship a new device (revision).</p>
-
+<p>Sometimes Software Update is a business model on its own as it makes devices much more attractive to the customer if they are updatable, i.e. they do not only buy a product because of its current feature set but make also a bet on its future capabilities. In addition new revenue streams may arise from the fact that feature extensions can potentially be monetized (e.g. Apps) without the need to design, manufacture and ship a new device (revision).</p>
 <h2 id="why-hawkbit">Why hawkBit?</h2>
-
 <p><strong>Updating software</strong> (components) on constrained edge devices as well as more powerful controllers and gateways is as mentioned before a <strong>common requirement</strong> in most IoT scenarios.</p>
-
 <p>At the time being, this process is <strong>usually handled by the IoT solution itself</strong>, sometimes backed by a full fledged device management system. We believe that this approach generates unnecessary <strong>duplicate work</strong> in the IoT space, in particular when considering the challenges of implementing a safe and reliable remote software update process: the software update process must never fail and also must never be compromised as, at the one hand, it can be used to fix almost any issue/problem on the device but at the same time also poses the greatest security threat if mis-used to introduce malicious code to the device.</p>
-
 <p>In addition we believe the software update process to be relatively <strong>independent from particular application domains</strong> when seen from the back-end (cloud) perspective. Updating the software for an entire car may differ from updating the firmware of a single sensor with regard to the connectivity of the device to the cloud and also to the complexity of the software package update process on the device. However, the process of rolling out the software, e.g. uploading an artifact to the repository, assigning it to eligible devices, managing the roll out campaign for a large number of devices, orchestrating content delivery networks to distribute the package, monitoring and reporting the progress of the roll-out and last but not least requirements regarding security and reliability are quite similar.</p>
-
 <p>Software update itself is often seen as a sub process of general device management. In fact, most device management systems include functionality for triggering groups of devices to perform an update, usually accompanied by an artifact repository and basic reporting and monitoring capabilities. This is true for both systems specifically targeting IoT as well as systems originating from the mobile area.</p>
-
 <p>Existing <strong>device management systems</strong> usually <strong>lack</strong> the capability to <strong>efficiently organize roll outs at IoT scale</strong>, e.g. splitting the roll out into sub groups, cascading them, automatically stopping the roll out after a defined error threshold etc. They are also usually restricted to a single device management protocol, either a proprietary one or one of the existing standard protocols like LWM2M, OMA-DM or TR-069. Even if they support more than one such protocol, they are often a result of the device management protocol they started with and restricted in their adoption capabilities to others.</p>
-
 <p>At the same time the wide functional scope of a full fledged <strong>device management system introduces unnecessary (and unwanted) complexity</strong> to many IoT projects. This is particularly true for IoT solutions working with constrained devices where requirements regarding generic device management are often very limited only but a secure &amp; reliable software update process is still mandatory.</p>
-
 <p>As a result we have the need for a domain independent solution</p>
-
 <ul>
 <li>that works for the majority of IoT projects</li>
 <li>that goes beyond the pure update and handles more complex <strong>roll out strategies</strong> needed by large scale IoT projects.</li>
 <li>that at the same time is <strong>focused on software updates</strong> in the IoT space</li>
 <li>and that is able to work on its own for simple scenarios while having the capability to integrate with existing device management systems and protocols.</li>
 </ul>
-
 <h2 id="cloud-ready">Cloud Ready</h2>
-
 <ul>
 <li><strong>Technical Scalability</strong>: connect millions of devices and ship terabytes of software on a global scale.</li>
 <li><strong>Functional Scalability</strong>: rollouts with hundreds of thousands of individual devices in it.</li>
@@ -462,7 +439,7 @@
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -482,7 +459,7 @@
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -515,14 +492,14 @@
 
   <div class="next">
   
-      <a href="https://kynetics.github.io/hawkbit/apis/mgmt/targets/" title="Targets API">
+      <a href="https://kynetics.github.io/hawkbit/news/2023-09-21-epl2.0/" title="Eclipse hawkBit upgrade to Eclipse Public License - v 2.0">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Targets API
+              Eclipse hawkBit upgrade to Eclipse Public License - v 2.0
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
@@ -554,8 +531,8 @@
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

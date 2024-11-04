@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Authorization - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -376,13 +376,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,30 +399,20 @@
 			<h1>Authorization </h1>
 
 			<p>Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF) API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on Spring security <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>.</p>
-
 <p>However, keep in mind that hawkBit does not offer an off the shelf authentication provider to leverage these permissions and the underlying multi user/tenant capabilities of hawkBit but it supports authentication providers offering an OpenID Connect interface. Check out <a href="http://projects.spring.io/spring-security/">Spring security documentation</a> for further information. In hawkBit <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-autoconfigure/src/main/java/org/eclipse/hawkbit/autoconfigure/security/SecurityAutoConfiguration.java">SecurityAutoConfiguration</a> is a good starting point for integration.</p>
-
 <p>The default implementation is single user/tenant with basic auth and the logged in user is provided with all permissions. Additionally, the application properties may be configured for multiple static users; see <a href="#multiple-users">Multiple Users</a> for details.</p>
-
 <h2 id="ddi-api">DDI API</h2>
-
 <p>An authenticated target is permitted to:</p>
-
 <ul>
 <li>retrieve commands from the server</li>
 <li>provide feedback to the the server</li>
 <li>download artifacts that are assigned to it</li>
 </ul>
-
 <p>A target might be permitted to download artifacts without authentication (if enabled, see above). Only the download can be permitted to disable the authentication. This can be used in scenarios where the artifacts itself are e.g. signed and secured.</p>
-
 <h2 id="management-api-and-ui">Management API and UI</h2>
-
 <h3 id="multiple-users">Multiple Users</h3>
-
 <p>hawkBit optionally supports configuring multiple static users through the application properties. In this case, the user and password Spring security properties are ignored.
 An example configuration is given below.</p>
-
 <pre><code>hawkbit.server.im.users[0].username=admin
 hawkbit.server.im.users[0].password={noop}admin
 hawkbit.server.im.users[0].firstname=Test
@@ -442,28 +427,19 @@ hawkbit.server.im.users[1].lastname=Tester
 hawkbit.server.im.users[1].email=test@tester.com
 hawkbit.server.im.users[1].permissions=READ_TARGET,UPDATE_TARGET,CREATE_TARGET,DELETE_TARGET
 </code></pre>
-
 <p>A permissions value of <code>ALL</code> will provide that user with all possible permissions. Passwords need to be specified with the used password encoder in brackets. In this example, <code>noop</code> is used as the plaintext encoder. For production use, it is recommended to use a hash function designed for passwords such as <em>bcrypt</em>. See this <a href="https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-format">blog post</a> for more information on password encoders in Spring Security.</p>
-
 <h3 id="openid-connect">OpenID Connect</h3>
-
 <p>hawkbit supports authentication providers which use the OpenID Connect standard, an authentication layer built on top of the OAuth 2.0 protocol.
 An example configuration is given below.</p>
-
 <pre><code>spring.security.oauth2.client.registration.oidc.client-id=clientID
-spring.security.oauth2.client.registration.oidc.client-secret=oidc-client-secret
 spring.security.oauth2.client.provider.oidc.issuer-uri=https://oidc-provider/issuer-uri
-spring.security.oauth2.client.provider.oidc.authorization-uri=https://oidc-provider/authorization-uri
-spring.security.oauth2.client.provider.oidc.token-uri=https://oidc-provider/token-uri
-spring.security.oauth2.client.provider.oidc.user-info-uri=https://oidc-provider/user-info-uri
 spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jwk-set-uri
 </code></pre>
-
+<p>Note: at the moment only DEFAULT tenant is supported. By default the resource_access/<client id>/roles claim is mapped to hawkBit permissions. However, by registering a Spring bean <em>org.eclipse.hawkbit.autoconfigure.security.OidcUserManagementAutoConfiguration.JwtAuthoritiesExtractor</em> a custom extractor permission mapper could be registered.</p>
 <h3 id="delivered-permissions">Delivered Permissions</h3>
-
 <ul>
-<li><p>READ<em>/UPDATE</em>/CREATE_/DELETE_TARGETS for:</p>
-
+<li>
+<p>READ_/UPDATE_/CREATE_/DELETE_TARGET for:</p>
 <ul>
 <li>Target entities including metadata (that includes also the installed and assigned distribution sets)</li>
 <li>Target tags</li>
@@ -471,44 +447,43 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
 <li>Target registration rules</li>
 <li>Bulk operations</li>
 <li>Target filters</li>
-</ul></li>
-
-<li><p>READ<em>/UPDATE</em>/CREATE_/DELETE_REPOSITORY for:</p>
-
+</ul>
+</li>
+<li>
+<p>READ_/UPDATE_/CREATE_/DELETE_REPOSITORY for:</p>
 <ul>
 <li>Distribution sets</li>
 <li>Software Modules</li>
 <li>Artifacts</li>
 <li>DS tags</li>
-</ul></li>
-
-<li><p>READ_TARGET_SECURITY_TOKEN</p>
-
+</ul>
+</li>
+<li>
+<p>READ_TARGET_SECURITY_TOKEN</p>
 <ul>
 <li>Permission to read the target security token. The security token is security concerned and should be protected.</li>
-</ul></li>
-
-<li><p>DOWNLOAD_REPOSITORY_ARTIFACT</p>
-
+</ul>
+</li>
+<li>
+<p>DOWNLOAD_REPOSITORY_ARTIFACT</p>
 <ul>
 <li>Permission to download artifacts of a software module (Note: READ_REPOSITORY allows only to read the metadata).</li>
-</ul></li>
-
-<li><p>TENANT_CONFIGURATION</p>
-
+</ul>
+</li>
+<li>
+<p>TENANT_CONFIGURATION</p>
 <ul>
 <li>Permission to administrate the tenant settings.</li>
-</ul></li>
-
-<li><p>READ<em>/UPDATE</em>/CREATE<em>/DELETE</em>/HANDLE_/APPROVE_ROLLOUT for:</p>
-
+</ul>
+</li>
+<li>
+<p>READ_/UPDATE_/CREATE_/DELETE_/HANDLE_/APPROVE_ROLLOUT for:</p>
 <ul>
 <li>Managing rollouts and provision targets through a rollout.</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="permission-matrix-for-example-uses-cases-that-need-more-than-one-permission">Permission Matrix for example uses cases that need more than one permission</h3>
-
 <table>
 <thead>
 <tr>
@@ -516,37 +491,30 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
 <th>Needed permissions</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Search <em>targets</em> by installed or assigned <em>distribution set</em></td>
 <td>READ_REPOSITORY, READ_TARGET</td>
 </tr>
-
 <tr>
 <td>Assign <em>DS</em> to a <em>target</em></td>
 <td>READ_REPOSITORY, UPDATE_TARGET</td>
 </tr>
-
 <tr>
 <td>Assign DS to target through a <em>Rollout</em>, i.e. <em>Rollout</em> creation and start</td>
 <td>READ_REPOSITORY, READ_TARGET, READ_ROLLOUT, CREATE_ROLLOUT, HANDLE_ROLLOUT</td>
 </tr>
-
 <tr>
 <td>Read <em>Rollout</em> status including its <em>deployment groups</em></td>
 <td>READ_REPOSITORY, READ_ROLLOUT</td>
 </tr>
-
 <tr>
 <td>Checks <em>targets</em> inside <em>Rollout deployment group</em></td>
 <td>READ_REPOSITORY, READ_TARGET, READ_ROLLOUT</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="device-management-federation-api">Device Management Federation API</h2>
-
 <p>The provided <em>RabbitMQ</em> <a href="https://www.rabbitmq.com/access-control.html">vhost and user</a> should be provided with the necessary permissions to send messages to hawkBit through the exchange and receive messages from it through the specified queue.</p>
 
 			<aside class="copyright" role="note">
@@ -557,7 +525,7 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -577,7 +545,7 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -649,8 +617,8 @@ spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jw
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

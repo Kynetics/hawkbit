@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Features - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -379,13 +379,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -406,25 +401,22 @@
 		<div class="wrapper">
 			<h1>Features </h1>
 
-			
-
-<h2 id="device-and-software-repository">Device and Software Repository</h2>
-
+			<h2 id="device-and-software-repository">Device and Software Repository</h2>
 <ul>
 <li>Repository that holds the provisioning targets and assignable software distributions.</li>
+<li>Targets to be logically grouped by Target Types.</li>
 <li>That includes a full software update history for every device.</li>
 <li>Support for pre-commission devices in the repository and plug and play, i.e. device is created if it is authenticated for the first time.</li>
 </ul>
-
 <h2 id="update-management">Update Management</h2>
-
 <ul>
 <li>Directly deploy a defined software distribution to a device (by Management UI or API).</li>
 <li>Update handling is independent of the device type, integration approach or connectivity.</li>
+<li>Optional user consent flow, download and install updates only after respective end user has confirmed it.</li>
+<li>Mass cancel the distribution of an update by invalidating the distribution set.</li>
+<li>Use action status codes for easier analysis.</li>
 </ul>
-
 <h2 id="management-ui">Management UI</h2>
-
 <ul>
 <li>Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).</li>
 <li>Manage and monitor software update operations.</li>
@@ -435,11 +427,9 @@
 <li>Responsive to resolution.</li>
 <li>Lazy loading of data.</li>
 <li>All information on one page.</li>
-<li>Optional integration with Bosch IoT Permissions service for full multi user support with fine granular permission based authorization.</li>
+<li>Deep-linking for Targets to improve navigation.</li>
 </ul>
-
 <h2 id="artifact-content-delivery">Artifact Content Delivery</h2>
-
 <ul>
 <li>Partial downloads supported.</li>
 <li>Download resume supported (RFC7233).</li>
@@ -447,21 +437,18 @@
 <li>Authorization based on software assignment, i.e. a device can only download what has been assigned to it in the first place.</li>
 <li>Delta artifact hosting supported.</li>
 <li>Artifact signature hosting supported.</li>
+<li>Plug-point for artifact encryption allowing to encrypt artifacts on upload.</li>
 </ul>
-
-<h2 id="rollout-campaign-management">Rollout/Campaign Management</h2>
-
+<h2 id="rolloutcampaign-management">Rollout/Campaign Management</h2>
 <ul>
 <li>Secure handling of large volumes of devices at rollout creation time.</li>
 <li>Flexible deployment group definition as part of a rollout.</li>
 <li>Monitoring of the rollout progress.</li>
 <li>Emergency rollout shutdown in case of update failures.</li>
+<li>Manually trigger next rollout group.</li>
 </ul>
-
 <h2 id="interfaces">Interfaces</h2>
-
 <h3 id="management-api">Management API</h3>
-
 <ul>
 <li>RESTful API</li>
 <li>Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).</li>
@@ -470,22 +457,18 @@
 <li>JSON payload with Hypermedia support.</li>
 <li>Supports filtering, sorting and paging.</li>
 </ul>
-
 <h3 id="direct-device-integration-api">Direct Device Integration API</h3>
-
 <ul>
 <li>RESTful HTTP based API for direct device integration
-
 <ul>
 <li>JSON payload.</li>
 <li>Traffic optimized (content based Etag generation, not modified).</li>
-</ul></li>
+</ul>
+</li>
 <li>Feedback channel from device.</li>
 <li>TLS encryption.</li>
 </ul>
-
 <h3 id="device-management-federation-api">Device Management Federation API</h3>
-
 <ul>
 <li>Indirect device integration through a device management service or application into hawkBit.</li>
 <li>Optimized for high service to service throughput with <a href="https://www.rabbitmq.com/amqp-0-9-1-reference.html">AMQP</a> messaging interface.</li>
@@ -501,7 +484,7 @@
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -521,7 +504,7 @@
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -593,8 +576,8 @@
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

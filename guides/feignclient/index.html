@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Feign Client - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -376,13 +376,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,25 +399,18 @@
 			<h1>Feign Client </h1>
 
 			<p>In this guide we describe how to create a <a href="https://github.com/Netflix/feign">Feign</a> Rest Client based on a  <a href="http://projects.spring.io/spring-boot/">Spring Boot</a> Application.</p>
-
 <h2 id="create-feign-rest-client">Create Feign REST Client</h2>
-
 <p>hawkBit provides REST interfaces for <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-ddi-api">Management API</a> and <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-ddi-api">DDI API</a>. Using this interfaces you can create a feign client with the help of the <a href="http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign-inheritance">feign inheritance support</a>.
 Our <a href="https://github.com/eclipse/hawkbit-examples">example</a> modules demonstrate how to create <a href="https://github.com/Netflix/feign">Feign</a> client resources. Here you can find the <a href="hhttps://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-feign-client">Management API client resources</a> and the <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-ddi-feign-client">DDI client resources</a>.
-A small <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">simulator application</a> demonstrates how you can interact with the hawkBit via the <a href="https://kynetics.github.io/hawkbit/documentation/interfaces/management-api.html">Management API
+A small <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">simulator application</a> demonstrates how you can interact with the hawkBit via the <a href="http://www.eclipse.org/hawkbit/documentation/interfaces/management-api.html">Management API
 </a>.</p>
-
 <h2 id="example-management-api-simulator">Example Management API simulator</h2>
-
 <p>In the follow code section, you can a see a feign client resource example. The interface extend the origin api interface to declare the <code>@FeignClient</code>. The <code>@FeignClient</code>declares that a REST client with that interface should be created.</p>
-
 <pre><code class="language-Java">@FeignClient(url = &quot;${hawkbit.url:localhost:8080}/&quot; + MgmtRestConstants.TARGET_V1_REQUEST_MAPPING)
 public interface MgmtTargetClientResource extends MgmtTargetRestApi {
 }
 </code></pre>
-
 <p>This interface can be autowired and use as a normal java interface:</p>
-
 <pre><code class="language-Java">public class CreateStartedRolloutExample {
 
     @Autowired
@@ -436,9 +424,7 @@ public interface MgmtTargetClientResource extends MgmtTargetRestApi {
     }
 
 </code></pre>
-
 <p>At <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-core-feign-client">hawkbit-example-core-feign-client</a> is a spring configuration to auto configure some beans, which can be reused for a own feign client.</p>
-
 <pre><code class="language-Java">@Configuration
 @ConditionalOnClass(Feign.class)
 @Import(FeignClientsConfiguration.class)
@@ -465,7 +451,7 @@ public class FeignClientConfiguration {
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -485,7 +471,7 @@ public class FeignClientConfiguration {
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -557,8 +543,8 @@ public class FeignClientConfiguration {
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

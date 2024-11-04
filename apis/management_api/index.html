@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Management API - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -376,13 +376,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,67 +399,34 @@
 			<h1>Management API </h1>
 
 			<p>The Management API is a RESTful API that enables to perform Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).</p>
-
 <p>Based on the Management API you can manage and monitor software update operations via HTTP/HTTPS. The <em>Management API</em> supports JSON payload with hypermedia as well as filtering, sorting and paging. Furthermore the Management API provides permission based access control and standard roles as well as custom role creation.</p>
-
 <p>The API is protected and needs authentication and authorization based on the security concept.</p>
-
 <h2 id="api-version">API Version</h2>
-
 <p>hawkBit provides an consistent Management API interface that guarantees backwards compatibility for future releases by version control.</p>
-
-<p>The current version of the Management API is <code>version 1 (v1)</code> with the URI <a href="http://localhost:8080/rest/v1/">http://localhost:8080/rest/v1/</a></p>
-
+<p>The current version of the Management API is <code>version 1 (v1)</code> with the URI http://localhost:8080/rest/v1/</p>
 <h2 id="api-resources">API Resources</h2>
-
 <p>Supported HTTP-methods are:</p>
-
 <ul>
 <li>GET</li>
 <li>POST</li>
 <li>PUT</li>
 <li>DELETE</li>
 </ul>
-
-<p>Available Management APIs resources are:</p>
-
-<ul>
-<li><a href="/hawkbit/apis/mgmt/targets/">Targets</a></li>
-<li><a href="/hawkbit/apis/mgmt/distributionsets/">Distribution sets</a></li>
-<li><a href="/hawkbit/apis/mgmt/distributionsettypes/">Distribution set types</a></li>
-<li><a href="/hawkbit/apis/mgmt/softwaremodules/">Software modules</a></li>
-<li><a href="/hawkbit/apis/mgmt/softwaremoduletypes/">Software module types</a></li>
-<li><a href="/hawkbit/apis/mgmt/targettag/">Target tag</a></li>
-<li><a href="/hawkbit/apis/mgmt/distributionsettag/">Distribution set tag</a></li>
-<li><a href="/hawkbit/apis/mgmt/rollouts/">Rollouts</a></li>
-<li><a href="/hawkbit/apis/mgmt/targetfilters/">Target filters</a></li>
-<li><a href="/hawkbit/apis/mgmt/tenant/">System configuration</a></li>
-</ul>
-
 <h2 id="headers">Headers</h2>
-
 <p>For all requests an <code>Authorization</code> header has to be set.</p>
-
 <ul>
-<li>Username: <code>Tenant\username</code></li>
+<li>Username: <code>username</code></li>
 <li>Password: <code>password</code></li>
 </ul>
-
 <p>Also have a look to the <a href="../../concepts/authentication/">Security</a> chapter.</p>
-
 <p>In addition, for POST and PUT requests the <code>Content-Type</code> header has to be set. Accepted content-types are.</p>
-
 <ul>
 <li><code>application/json</code></li>
 <li><code>application/hal+json</code></li>
 </ul>
-
 <h2 id="request-body">Request Body</h2>
-
 <p>Besides the relevant data (name, description, createdBy etc.) of a resource entity, a resource entity also has URIs (<code>_links</code>) to linked resource entities.</p>
-
 <p>A <em>Distribution Set</em> entity may have for example URIs to artifacts, <em>Software Modules</em>, <em>Software Module Types</em> and metadata.</p>
-
 <pre><code class="language-json">&quot;_links&quot;: {
     &quot;artifacts&quot;: {
         &quot;href&quot;: &quot;http://localhost:8080/rest/v1/softwaremodules/83/artifacts&quot;
@@ -479,6 +441,8 @@
         &quot;href&quot;: &quot;http://localhost:8080/rest/v1/softwaremodules/83/metadata?offset=0&amp;limit=50&quot;
     }
 </code></pre>
+<h2 id="management-apis">Management APIs</h2>
+<iframe style="padding-top: 20px;" width="100%" height="900px" frameborder="0" src="../../rest-api/mgmt.html"></iframe>
 
 			<aside class="copyright" role="note">
   <div class="logo">
@@ -488,7 +452,7 @@
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -508,7 +472,7 @@
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -580,8 +544,8 @@
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

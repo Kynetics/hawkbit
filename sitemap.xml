@@ -1,167 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://kynetics.github.io/hawkbit/news/2018-07-26-first-release/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/tenant/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/targetfilters/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/rollouts/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsettag/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/targettag/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/softwaremodules/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsettypes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/distributionsets/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/softwaremoduletypes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/targets/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://kynetics.github.io/hawkbit/news/2023-09-21-epl2.0/</loc>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/whatishawkbit/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/gettingstarted/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/guides/runhawkbit/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/guides/feignclient/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/guides/clustering/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/guides/customtheme/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/features/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/concepts/authentication/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/concepts/authorization/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/concepts/datamodel/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/concepts/rollout-management/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/concepts/targetstate/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/architecture/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/ui/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/apis/management_api/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/apis/ddi_api/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/apis/dmf_api/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/community/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/release-notes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kynetics.github.io/hawkbit/apis/mgmt/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/news/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/rest-api/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/apis/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/concepts/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/guides/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/sandbox/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/tags/</loc>
   </url>
-  
 </urlset>

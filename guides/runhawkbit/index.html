@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Run hawkBit - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -376,13 +376,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,16 +399,12 @@
 			<h1>Run hawkBit </h1>
 
 			<p>In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the hawkBit example modules and update server.</p>
-
 <div class="admonition note">
 <p class="admonition-title"></p>
 <p>The update server can in fact be run stand alone. However, only with an embedded H2, no Device Management Federation API and no artifact storage.</p>
 </div>
-
 <h2 id="system-architecture">System Architecture</h2>
-
 <p>This guide describes a target architecture that is more like one that you will expect in a production system.</p>
-
 <ul>
 <li>hawkBit <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">Update Server</a>.</li>
 <li><a href="https://mariadb.org">MariaDB</a> for the repository.</li>
@@ -422,85 +413,56 @@
 <li><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">hawkBit Device Simulator</a>.</li>
 <li><a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-feign-client">hawkBit Management API example client</a>.</li>
 </ul>
-
 <h2 id="prerequisites">Prerequisites</h2>
-
 <ul>
 <li>You have a working <a href="https://github.com/eclipse/hawkbit">hawkBit core build</a>.</li>
 <li>You have a working <a href="https://github.com/eclipse/hawkbit-examples">hawkBit examples build</a>.</li>
 </ul>
-
 <h2 id="adapt-hawkbit-update-server-and-device-simulator-to-your-environment">Adapt hawkBit Update Server and Device Simulator to your environment.</h2>
-
 <p>As mentioned you can create your own application with hawkBit inside or adapt the existing example app. The second option will be shown here.</p>
-
-<h3 id="set-mariadb-dependency-to-compile-in-the-update-server-pom-https-github-com-eclipse-hawkbit-blob-master-hawkbit-runtime-hawkbit-update-server-pom-xml">Set MariaDB dependency to compile in the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/pom.xml">update server POM</a></h3>
-
+<h3 id="set-mariadb-dependency-to-compile-in-the-update-server-pomhttpsgithubcomeclipsehawkbitblobmasterhawkbit-runtimehawkbit-update-serverpomxml">Set MariaDB dependency to compile in the <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/pom.xml">update server POM</a></h3>
 <pre><code class="language-xml">&lt;dependency&gt;
   &lt;groupId&gt;org.mariadb.jdbc&lt;/groupId&gt;
   &lt;artifactId&gt;mariadb-java-client&lt;/artifactId&gt;
   &lt;scope&gt;compile&lt;/scope&gt;
 &lt;/dependency&gt;
 </code></pre>
-
-<h3 id="configure-mariadb-mysql-connection-settings">Configure MariaDB/MySQL connection settings.</h3>
-
+<h3 id="configure-mariadbmysql-connection-settings">Configure MariaDB/MySQL connection settings.</h3>
 <p>For this you can either edit the existing <em>application.properties</em> or create a <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-profile-specific-properties">new profile</a>.</p>
-
 <pre><code class="language-properties">spring.jpa.database=MYSQL
-spring.datasource.url=jdbc:mysql://localhost:3306/YOUR_SCHEMA
+spring.datasource.url=jdbc:mariadb://localhost:3306/YOUR_SCHEMA
 spring.datasource.username=YOUR_USER
 spring.datasource.password=YOUR_PWD
 spring.datasource.driverClassName=org.mariadb.jdbc.Driver
 </code></pre>
-
 <p>Note: On Ubuntu 18.04 with MariaDB 10.1 installed from the default repository via apt install <em>COLLATE option</em> of database have to be changed manually to &ldquo;latin1&rdquo;.
 For recent versions of MariaDB running on Ubuntu this is not required (cf. <a href="https://mariadb.com/kb/en/differences-in-mariadb-in-debian-and-ubuntu">system variables</a>, <a href="https://github.com/eclipse/hawkbit/issues/963">issue</a>)</p>
-
 <h3 id="configure-rabbitmq-connection-settings-for-update-server-and-device-simulator-optional">Configure RabbitMQ connection settings for update server and device simulator (optional).</h3>
-
 <p>We provide already defaults that should work with a standard Rabbit installation. Otherwise configure the following in the <code>application.properties</code> of the two services:</p>
-
 <pre><code class="language-properties">spring.rabbitmq.username=guest
 spring.rabbitmq.password=guest
 spring.rabbitmq.virtualHost=/
 spring.rabbitmq.host=localhost
 spring.rabbitmq.port=5672
 </code></pre>
-
-<h3 id="adapt-hostname-of-example-scenario-creation-script-https-github-com-eclipse-hawkbit-examples-blob-master-hawkbit-example-mgmt-simulator-src-main-resources-application-properties">Adapt hostname of example scenario <a href="https://github.com/eclipse/hawkbit-examples/blob/master/hawkbit-example-mgmt-simulator/src/main/resources/application.properties">creation script</a></h3>
-
+<h3 id="adapt-hostname-of-example-scenario-creation-scripthttpsgithubcomeclipsehawkbit-examplesblobmasterhawkbit-example-mgmt-simulatorsrcmainresourcesapplicationproperties">Adapt hostname of example scenario <a href="https://github.com/eclipse/hawkbit-examples/blob/master/hawkbit-example-mgmt-simulator/src/main/resources/application.properties">creation script</a></h3>
 <p>Should only be necessary if your system does not run on localhost or uses a different port than the example app.</p>
-
 <p>Adapt <code>application.properties</code> in this case:</p>
-
 <pre><code class="language-properties">hawkbit.url=localhost:8080
 </code></pre>
-
 <p>or provide the parameter on command line:</p>
-
 <pre><code class="language-properties">hawkbit-example-mgmt-simulator-##VERSION##.jar --hawkbit.url=YOUR_HOST:PORT
 </code></pre>
-
-<h2 id="compile-run">Compile &amp; Run</h2>
-
-<h3 id="compile-run-your-production-ready-app">Compile &amp; Run your <em>&ldquo;production ready&rdquo;</em> app</h3>
-
+<h2 id="compile--run">Compile &amp; Run</h2>
+<h3 id="compile--run-your-_production-ready_-app">Compile &amp; Run your <em>&ldquo;production ready&rdquo;</em> app</h3>
 <p>see <a href="https://github.com/eclipse/hawkbit/tree/master/hawkbit-runtime/hawkbit-update-server">update server</a></p>
-
-<h3 id="compile-run-example-scenario-creation-script-https-github-com-eclipse-hawkbit-examples-tree-master-hawkbit-example-mgmt-simulator-optional">Compile &amp; Run example scenario <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">creation script</a> (optional)</h3>
-
+<h3 id="compile--run-example-scenario-creation-scripthttpsgithubcomeclipsehawkbit-examplestreemasterhawkbit-example-mgmt-simulator-optional">Compile &amp; Run example scenario <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-example-mgmt-simulator">creation script</a> (optional)</h3>
 <p>This has to be done before the device simulator is started. hawkBit creates the mandatory tenant metadata with first login into either <em>Management UI</em> or API (which is done by this client).</p>
-
 <p>However, this is not done by <em>DMF</em> which is in fact used by the device simulator, i.e. without calling <em>Management API</em> first hawkBit would drop all <em>DMF</em> messages as the tenant is unknown.</p>
-
-<h3 id="compile-run-device-simulator-optional">Compile &amp; Run device simulator (optional)</h3>
-
+<h3 id="compile--run-device-simulator-optional">Compile &amp; Run device simulator (optional)</h3>
 <p>see <a href="https://github.com/eclipse/hawkbit-examples/tree/master/hawkbit-device-simulator">device simulator</a></p>
-
-<h1 id="enjoy-hawkbit-with-a-real-database-artifact-storage-and-all-interfaces-apis-available">Enjoy hawkBit with a real database, artifact storage and all <a href="../../apis/">interfaces</a> available</h1>
-
-<p><img src="../../images/hawkbit_ui.png" alt="" /></p>
+<h1 id="enjoy-hawkbit-with-a-real-database-artifact-storage-and-all-interfacesapis-available">Enjoy hawkBit with a real database, artifact storage and all <a href="../../apis/">interfaces</a> available</h1>
+<p><img src="../../images/hawkbit_ui.png" alt=""></p>
 
 			<aside class="copyright" role="note">
   <div class="logo">
@@ -510,7 +472,7 @@ spring.rabbitmq.port=5672
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -530,7 +492,7 @@ spring.rabbitmq.port=5672
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -602,8 +564,8 @@ spring.rabbitmq.port=5672
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 

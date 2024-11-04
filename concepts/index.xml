@@ -13,7 +13,6 @@
       
       <guid>https://kynetics.github.io/hawkbit/concepts/authentication/</guid>
       <description>&lt;p&gt;A hawkBit update server can be accessed in four different ways:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; by &lt;strong&gt;targets&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Management API&lt;/em&gt; by 3rd party &lt;strong&gt;applications&lt;/strong&gt;.&lt;/li&gt;

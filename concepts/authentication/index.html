@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Authentication - Eclipse hawkBit</title>
-    <meta name="generator" content="Hugo 0.77.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     
     <meta name="description" content="IoT. Update. Device.">
@@ -161,7 +161,7 @@
         <strong>Eclipse hawkBit&trade; </strong>
         
           <br>
-          eclipse/hawkbit
+          Kynetics/hawkbit
         
       </div>
     </div>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="repo-stars">
-            <a href="https://github.com/eclipse/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
+            <a href="https://github.com/Kynetics/hawkbit/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
@@ -376,13 +376,8 @@
             </a>
           </li>
           <li>
-            <a href="https://circleci.com/gh/eclipse/hawkbit" title="Circle CI Status" target="_blank">
-              <img src="https://circleci.com/gh/eclipse/hawkbit.svg?style=shield" />
-            </a>
-          </li>
-          <li>
-            <a href="https://sonar.ops.bosch-iot-rollouts.com" title="SonarQube Status" target="_blank">
-              <img src="https://sonar.ops.bosch-iot-rollouts.com/api/badges/gate?key=org.eclipse.hawkbit:hawkbit-parent" />
+            <a href="https://sonarcloud.io/organizations/bosch-iot-rollouts/projects?sort=name" title="Sonarcloud Status" target="_blank">
+              <img src="https://sonarcloud.io/api/project_badges/measure?project=org.eclipse.hawkbit%3Ahawkbit-parent&metric=alert_status" />
             </a>
           </li>
           <li>
@@ -404,76 +399,222 @@
 			<h1>Authentication </h1>
 
 			<p>A hawkBit update server can be accessed in four different ways:</p>
-
 <ul>
 <li><em>Direct Device Integration (DDI) API</em> by <strong>targets</strong>.</li>
 <li><em>Management API</em> by 3rd party <strong>applications</strong>.</li>
 <li><em>Device Management Federation (DMF) API</em> by 3rd party <strong>applications</strong> through AMQP.</li>
 <li><em>Management UI</em> by <strong>users</strong>.</li>
 </ul>
-
 <h2 id="ddi-api-authentication-modes">DDI API Authentication Modes</h2>
-
 <h3 id="security-token">Security Token</h3>
-
 <p>hawkBit supports multiple ways to authenticate a target against the server. The different authentication modes can be individual enabled and disabled within hawkBit. Both on system level (with Spring Boot properties) as per individual tenant.</p>
-
 <h4 id="target-security-token-authentication">Target Security Token Authentication</h4>
-
 <p>There is a 32 alphanumeric character security-token for each created target within IoT hawkBit. This token can be used to authenticate the target at hawkBit through the HTTP-Authorization header with the custom scheme <em>TargetToken</em>.</p>
-
 <pre><code>GET /SPDEMO/controller/v1/0e945f95-9117-4500-9b0a-9c6d72fa6c07 HTTP/1.1
 Host: your.hawkBit.server
 Authorization: TargetToken bH7XXAprK1ChnLfKSdtlsp7NOlPnZAYY
 </code></pre>
-
 <p>The target security token is provided in <a href="../../apis/dmf_api/">DMF API</a> as part of the update message in order to allow DMF clients to leverage the feature or can it be manually retrieved per target by <a href="../../apis/management_api/">Management API</a> or in the <a href="../../ui">Management UI</a> in the target details.</p>
-
 <p>Note: needs to be enabled in your hawkBit installation <strong>and</strong> in the tenant configuration. That allows both the operator as well as the individual customer (if run in a multi-tenant setup) to enable this access method. See <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a> for system wide enablement.</p>
-
 <p>The additional activation for the individual tenant:</p>
-
-<p><img src="../../images/security/targetToken.png" alt="Enable Target Token" /></p>
-
+<p><img src="../../images/security/targetToken.png" alt="Enable Target Token"></p>
 <h4 id="gateway-security-token-authentication">Gateway Security Token Authentication</h4>
-
 <p>Often the targets are connected through a gateway which manages the targets directly and as a result are indirectly connected to the hawkBit update server.</p>
-
 <p>To authenticate this gateway and allow it to manage all target instances under its tenant there is a <em>GatewayToken</em> to authenticate this gateway through the HTTP-Authorization header with a custom scheme <em>GatewayToken</em>. This is of course also handy during development or for testing purposes. However, we generally recommend to use this token with care as it allows to act <em>in the name of</em> any device.</p>
-
 <pre><code>GET /SPDEMO/controller/v1/0e945f95-9117-4500-9b0a-9c6d72fa6c07 HTTP/1.1
 Host: your.hawkBit.server
 Authorization: GatewayToken 3nkswAZhX81oDtktq0FF9Pn0Tc0UGXPW
 </code></pre>
-
 <p>Note: needs to be enabled in your hawkBit installation <strong>and</strong> in the tenant configuration. That allows both the operator as well as the individual customer (if run in a multi-tenant setup) to enable this access method. See <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a> for system wide enablement.</p>
-
 <p>The additional activation for the individual tenant:</p>
-
-<p><img src="../../images/security/gatewayToken.png" alt="Enable Gateway Token" /></p>
-
+<p><img src="../../images/security/gatewayToken.png" alt="Enable Gateway Token"></p>
 <h4 id="anonymous-access">Anonymous access</h4>
-
 <p>Here we offer general anonymous access for all targets (see <a href="https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/security/DdiSecurityProperties.java">DdiSecurityProperties</a>) which we consider not really sufficient for a production system but it might come in handy to get a project started in the beginning.</p>
-
 <p>However, anonymous download on the other side might be interesting even in production for scenarios where the artifact itself is already encrypted.</p>
-
 <p>The activation for the individual tenant:</p>
+<p><img src="../../images/security/anonymousDownload.png" alt="Enable Anonymous Download"></p>
+<h3 id="certificate-authentication-by-reverse-proxy">Certificate Authentication by Reverse Proxy</h3>
+<p>hawkBit offers a certificate-based authentication mechanism, also known as mutual TLS (mTLS), which eliminates the need to share a security token with the server. To implement this, you&rsquo;ll require a reverse proxy deployed in front of the hawkBit server to handle authentication. This process involves obtaining certificates (and keys) for both the client and the reverse proxy and configuring hawkBit accordingly.</p>
+<p>Initially, you&rsquo;ll need to obtain certificates (and keys) for these components from the same or different Certificate Authorities (CAs). Once you have acquired certificates you have to set them up to both the client and the hawkBit server.</p>
+<p>Then you shall enable <em>Allow targets to authenticate via a certificate authenticated by a reverse proxy</em> and set the fingerprint of the client certificate issuer(s) (as a comma separated list).</p>
+<p>To authenticate the request to hawBit the following condition shall be met:</p>
+<ul>
+<li>the common name of the client certificate shall match the controller/client id</li>
+<li>the SSL Issuer(s) hash of the presented client certificate shall be set for the tenant. For that, in Hawkbit&rsquo;s UI section, under system configuration, you shall enable &lsquo;Allow targets to authenticate via a certificate by an reverse proxy&rsquo; and set the hash of the client certificate issuer(s) (as a comma separated list).</li>
+</ul>
+<p><img src="../../images/security/exampleReverseProxySettings.png" alt="Example Reverse Proxy Settings"></p>
+<p>You can use the following command to get the issuer hash:</p>
+<pre><code class="language-shell">openssl x509 -in client_certificate.crt -issuer_hash -noout`
+</code></pre>
+<p>Here is an example diagram that shows all the communication between the hawkBit, reverse proxy and client. For the sake of simplification we assume that there are not intermediate certificates and the certificate and key are as follows:</p>
+<ul>
+<li>
+<p>client_ca.crt signs client.crt</p>
+</li>
+<li>
+<p>server_ca.crt signs server.crt</p>
+</li>
+<li>
+<p>client has the client.crt, client.key and server_ca.crt</p>
+</li>
+<li>
+<p>server (in this case reverse proxy) has the server.crt, server.key and client_ca.crt</p>
+</li>
+</ul>
+<p><img src="../../images/security/exampleReverseProxyArchitecture.png" alt="Example Reverse Proxy Architecture"></p>
+<h4 id="example---nginx-reverse-proxy-configurations">Example - Nginx Reverse Proxy Configurations</h4>
+<p>Nginx doesn&rsquo;t support obtaining the issuer hash without addons. Therefore, in this example we bypass sending real SSL Issuer hash to hawhBit but do certificate issuer validation at Nginx and then supply shared (between Nginx and hawkBit) fixed hash &ldquo;Hawkbit&rdquo;. You could use any value here as long as it is matched with the <em>Allow targets to authenticate via a certificate authenticated by a reverse proxy</em> setting in the hawkBit UI. Note that for multi-tenant scenarios with different trusted CAs this example won&rsquo;t work.</p>
+<ol>
+<li>
+<p>Hawkbit Configurations</p>
+<p>There are also some configurations that you need update when you deployed your hawkbit service.</p>
+<p>You need to add the given setting to your hawkBit configurations so that hawkBit can generate the URLs according to the https that the client will use to download. If you&rsquo;re deploying hawkBit as a Docker container, add these configurations as environmental values in the docker-compose.yml file.</p>
+</li>
+</ol>
+<pre><code>server.forward-headers-strategy=NATIVE
+</code></pre>
+<ol start="2">
+<li>
+<p>In Hawkbit&rsquo;s UI section, under system configuration, make sure to select <em>Allow targets to authenticate via a certificate authenticated by a reverse proxy</em> and input the fixed issuer hash as &ldquo;Hawkbit&rdquo;. This can be whetever you have configured in the nginx configuration in <code>proxy_set_header X-Ssl-Issuer-Hash-1</code> below.</p>
+</li>
+<li>
+<p>After placing your certificates and keys, you need to deploy your proxy server and apply the provided configurations. You can apply mutual TLS specifically to the URL given below to implement the process only for devices using the Device Integration API:</p>
+<p><code>hawkbit.dev.example.com/default/controller/</code></p>
+<p>This ensures that other clients, like UI users, can connect to hawkBit without requiring client certificates. They can use Username and Password in the Management API, eliminating the need for authentication and making it more user-friendly.</p>
+</li>
+</ol>
+<pre><code class="language-nginx"># Nginx Hawkbit Configurations
 
-<p><img src="../../images/security/anonymousDownload.png" alt="Enable Anonymous Download" /></p>
+# Gets the Common Name of the certificate from the client certificate. 
+map $ssl_client_s_dn $ssl_client_s_dn_cn {
+    default &quot;&quot;;
+    ~CN=(?&lt;CN&gt;[^,]+) $CN;
+}
 
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name hawkbit.dev.example.com www.hawkbit.dev.example.com;
+    server_tokens off;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://hawkbit.dev.example.com$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    server_name hawkbit.dev.example.com;
+
+    ssl_certificate /etc/nginx/ssl/live/hawkbit.dev.example.com/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/live/hawkbit.dev.example.com/server.key;
+
+    ssl_client_certificate /etc/nginx/client-cer/client_ca.crt;
+    ssl_verify_client      optional;
+    ssl_verify_depth 3;
+
+
+   # For devices that is using device integration API, 
+   # Mutual TLS is required.
+   location ~*/.*/controller/ {
+        if ($ssl_client_verify != SUCCESS) {
+           return 403;
+        }
+
+        proxy_pass http://hawkbit.dev.example.com:8080;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        # Client certificate Common Name and Issuer Hash is required
+        # for auth in hawkbit. 
+        proxy_set_header X-Ssl-Client-Cn $ssl_client_s_dn_cn;
+        proxy_set_header X-Ssl-Issuer-Hash-1 Hawkbit;
+
+        # These are required for clients to upload and download software. 
+        proxy_request_buffering off;
+        client_max_body_size 1000m;
+   }
+
+   # For clients that is using UI or Management API
+   location / {
+        proxy_pass http://hawkbit.dev.example.com:8080;
+        proxy_set_header Host $http_host; 
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	    proxy_request_buffering off;
+	    client_max_body_size 1000m;
+   }   
+}
+</code></pre>
+<ol start="4">
+<li>To deploy Nginx, you could use a <code>.yml</code> file. Here&rsquo;s an example <code>docker-compose.yml</code> file for Nginx Docker.</li>
+</ol>
+<pre><code class="language-yml">version: '3'
+
+services:
+  webserver:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+      - ./client-cer/:/etc/nginx/client-cer/
+      - ./landing-page/:/etc/webserver/landing-page
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+</code></pre>
+<p><code>/client-cer/:/etc/nginx/client-cer/</code> is the designated location for the certificate authority that has signed the client certificate. The presented client certificate will be verified against this CA.</p>
+<ol start="5">
+<li>After successfully generating your certificates with the correct chain, deploying your Nginx and Hawkbit services with appropriate configurations, and updating the settings on the device side, you will be able to establish a certificate-based authentication mechanism. This will eliminate the necessity of sharing a security token with the server.</li>
+</ol>
+<p> </p>
+<h5 id="swupdate-suricatta-configurations">Swupdate Suricatta Configurations</h5>
+<p>If the client is utilizing the SWUpdate Suricatta service, the configurations on the device or client side should also be adjusted as follows. Remember to change id, url and certificate names to your needs.</p>
+<p>The location of the config file is <code>/etc/swupdate/swupdate.conf</code></p>
+<pre><code class="language-yml">suricatta :
+{
+tenant = &quot;default&quot;;
+id = &quot;device_id&quot;;
+url = &quot;https://hawkbit.dev.example.com&quot;;
+nocheckcert = false;
+cafile = &quot;server_ca.crt&quot;;
+sslkey = &quot;/etc/ssl/certs/client.key&quot;;
+sslcert = &quot;/etc/ssl/certs/client.crt&quot;;
+};
+</code></pre>
+<p>If your client service is a linux, you can use the command bellow to see the logs produced by the swupdate.</p>
+<pre><code class="language-shell">journalctl --follow -u swupdate
+</code></pre>
+<p> </p>
+<h5 id="testing">Testing</h5>
+<p>You can test the communication by using the Curl command below to see if you successfully implemented mutual TLS:</p>
+<pre><code class="language-shell">curl -L -v --cert client.crt --key client.key --cacert server_ca.crt https://hawkbit.dev.example.com/default/controller/v1/{device-id}
+</code></pre>
+<p>In the UI, after uploading an SWU package and requesting a firmware update, you can use the link below to attempt to install the software package.</p>
+<pre><code>curl -L -v --cert client.crt --key client.key --cacert server_ca.crt https://hawkbit.dev.example.com/default/controller/v1/{device-id}/softwaremodules/{artifact-id}/artifacts/hawkbit_updated_5.swu --output outputfile
+</code></pre>
 <h2 id="dmf-api">DMF API</h2>
-
 <p>Authentication is provided by <em>RabbitMQ</em> <a href="https://www.rabbitmq.com/access-control.html">vhost and user credentials</a> that is used for the integration.</p>
-
 <h2 id="management-api">Management API</h2>
-
 <ul>
 <li>Basic Auth</li>
 </ul>
-
 <h2 id="management-ui">Management UI</h2>
-
 <ul>
 <li>Login Dialog</li>
 <li>OpenID Connect</li>
@@ -487,7 +628,7 @@ Authorization: GatewayToken 3nkswAZhX81oDtktq0FF9Pn0Tc0UGXPW
   </div>
   <p class="notice">
     
-    &copy; 2021 The Eclipse hawkBit Project &ndash;
+    &copy; 2024 The Eclipse hawkBit Project &ndash;
     
     Documentation built with
     <a href="https://www.gohugo.io" target="_blank">Hugo</a>
@@ -507,7 +648,7 @@ Authorization: GatewayToken 3nkswAZhX81oDtktq0FF9Pn0Tc0UGXPW
     <a href="http://www.eclipse.org/legal" target="_blank">
       &gt; Legal
     </a>
-    <a href="https://www.eclipse.org/org/documents/epl-v10.php" target="_blank">
+    <a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt" target="_blank">
       &gt; License
     </a>
   </p>
@@ -579,8 +720,8 @@ Authorization: GatewayToken 3nkswAZhX81oDtktq0FF9Pn0Tc0UGXPW
 
     <script>
     
-      var base_url = 'https:\/\/www.eclipse.org\/hawkbit\/';
-      var repo_id  = 'eclipse\/hawkbit';
+      var base_url = 'https:\/\/kynetics.github.io\/hawkbit\/';
+      var repo_id  = 'Kynetics\/hawkbit';
     
     </script>
 
