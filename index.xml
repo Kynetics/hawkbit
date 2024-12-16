@@ -43,10 +43,7 @@ Why Software Updates in IoT? Having software update capabilities ensures a secur
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kynetics.github.io/hawkbit/gettingstarted/</guid>
-      <description>On Sandbox We offer a sandbox installation that is free for everyone to try out hawkBit&amp;rsquo;s Management UI, Management API, and Direct Device Integration API: https://hawkbit.eclipseprojects.io
-The sandbox is a shared installation that will be reset from time to time. Therefore, it is not allowed to upload any personal data.
-In addition, the following vendors offer free trial accounts for their Eclipse hawkBit compatible products:
-Bosch IoT Rollouts (by Bosch Digital) Kynetics Update Factory (by Kynetics, Inc.) From Docker Image Overview Service / Container A B C hawkBit Update Server ✓ ✓ ✓ hawkBit Device Simulator ✓ MySQL ✓ ✓ RabbitMQ ✓ ✓ HawkBit Update Server uses username=admin and password=admin as default login credentials.</description>
+      <description>Kynetics offers a trial of their Update Factory service which uses the Eclipse hawkBit server.&#xA;From Docker Image Overview Service / Container A B C hawkBit Update Server ✓ ✓ ✓ hawkBit Device Simulator ✓ MySQL ✓ ✓ RabbitMQ ✓ ✓ HawkBit Update Server uses username=admin and password=admin as default login credentials. They can be overridden by the environment variables spring.security.user.name and spring.security.user.password which are defined in the corresponding default application.</description>
     </item>
     
     <item>
