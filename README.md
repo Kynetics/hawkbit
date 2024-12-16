@@ -26,16 +26,9 @@ see [hawkBit Documentation](https://www.eclipse.dev/hawkbit/)
 
 Next to the hawkBit core hosted here the project maintains as well [examples](https://github.com/eclipse/hawkbit-examples) and [extension](https://github.com/eclipse/hawkbit-extensions) repositories.
 
-# hawkBit sandbox
+# hawkBit Demo
 
-We offer a sandbox installation that is free for everyone to try out hawkBit. However, keep in mind that the sandbox database will be reset from time to time. It is also not possible to upload any artifacts into the sandbox. But you can use it to try out the Management UI, Management API and DDI API. Keep in mind as well that you are not permitted to store any kind of personal data in the sandbox.
-
-[https://hawkbit.eclipseprojects.io/UI/login](https://hawkbit.eclipseprojects.io/UI/login)
-
-In addition the following vendors offer free trial accounts for their hawkBit compatible products:
-
-- [Bosch IoT Rollouts](https://developer.bosch-iot-suite.com/service/rollouts)
-- [Kynetics Update Factory](https://www.kynetics.com/iot-platform-update-factory)
+Kynetics offers a trial of their [Update Factory service](https://www.kynetics.com/android-ota-mdm) which uses the Eclipse hawkBit server.
 
 # Device Integration (Client libraries)
 
