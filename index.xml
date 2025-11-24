@@ -4,224 +4,155 @@
     <title>Eclipse hawkBit</title>
     <link>https://kynetics.github.io/hawkbit/</link>
     <description>Recent content on Eclipse hawkBit</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://kynetics.github.io/hawkbit/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Eclipse hawkBit 0.2.0 - First Release</title>
-      <link>https://kynetics.github.io/hawkbit/news/2018-07-26-first-release/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kynetics.github.io/hawkbit/news/2018-07-26-first-release/</guid>
-      <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015 and with version 0.2.0 a first release is available.
-In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get started in seconds.</description>
-    </item>
-    
-    <item>
-      <title>Eclipse hawkBit upgrade to Eclipse Public License - v 2.0</title>
-      <link>https://kynetics.github.io/hawkbit/news/2023-09-21-epl2.0/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kynetics.github.io/hawkbit/news/2023-09-21-epl2.0/</guid>
-      <description>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT since 2015.
-In this article, we want to give an overview of the latest highlights of hawkBit license changes.
-hawkBit license upgraded to Eclipse Public License - v 2.0 Based on the issues Switch to EPL 2.</description>
-    </item>
-    
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://kynetics.github.io/hawkbit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What is hawkBit?</title>
       <link>https://kynetics.github.io/hawkbit/whatishawkbit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/whatishawkbit/</guid>
-      <description>Eclipse hawkBit™ is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure.
-Why Software Updates in IoT? Having software update capabilities ensures a secure IoT by means that it gives IoT projects a fighting chance against pandora&amp;rsquo;s box that they opened the moment their devices got connected. From that moment on devices are at the forefront of IT security threats many embedded software developers historically never had to face.</description>
+      <description>&lt;p&gt;Eclipse hawkBit™ is a domain-independent back-end framework for rolling out software updates to constrained edge&#xA;devices as well as more powerful controllers and gateways connected to IP based networking infrastructure.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../images/hawkbit_logo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-software-updates-in-iot&#34;&gt;Why Software Updates in IoT?&lt;/h2&gt;&#xA;&lt;p&gt;Having software update capabilities ensures a secure IoT by means that it gives IoT projects a fighting chance against&#xA;pandora&amp;rsquo;s box that they opened the moment their devices got connected. From that moment on devices are at the forefront&#xA;of IT security threats many embedded software developers historically never had to face. Shipping for instance a Linux&#xA;powered device connected to the Internet without any security updates ever applied during its lifetime is kind of a&#xA;suicidal act these days.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Getting Started</title>
       <link>https://kynetics.github.io/hawkbit/gettingstarted/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/gettingstarted/</guid>
-      <description>Kynetics offers a trial of their Update Factory service which uses the Eclipse hawkBit server.&#xA;From Docker Image Overview Service / Container A B C hawkBit Update Server ✓ ✓ ✓ hawkBit Device Simulator ✓ MySQL ✓ ✓ RabbitMQ ✓ ✓ HawkBit Update Server uses username=admin and password=admin as default login credentials. They can be overridden by the environment variables spring.security.user.name and spring.security.user.password which are defined in the corresponding default application.</description>
+      <description>&lt;h2 id=&#34;from-docker-image&#34;&gt;From Docker Image&lt;/h2&gt;&#xA;&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;&#xA;&lt;p&gt;HawkBit Update Server default user has &lt;em&gt;admin/admin&lt;/em&gt; as default credentials. See below how the user can be changed.&lt;/p&gt;&#xA;&lt;p&gt;It supports two configurations:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;monolith - hawkbit-update-server&lt;/li&gt;&#xA;&lt;li&gt;micro-service - hawkbit-mgmt-server, hawkbit-ddi-server, hawkbit-dmf-server.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;a-run-hawkbit-update-server-monolith-as-docker-container&#34;&gt;A: Run hawkBit Update Server (Monolith) as Docker Container&lt;/h3&gt;&#xA;&lt;p&gt;Start the hawkBit Update Server as a single container&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ docker run -p 8080:8080 hawkbit/hawkbit-update-server:latest&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;This will start hawkBit update server with embedded H2 database for evaluation purposes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Run hawkBit</title>
       <link>https://kynetics.github.io/hawkbit/guides/runhawkbit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/guides/runhawkbit/</guid>
-      <description>&lt;p&gt;In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is based on the hawkBit example modules and update server.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this guide we describe how to run a full featured hawkBit setup based on a production ready infrastructure. It is&#xA;based on the hawkBit example modules and update server.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Feign Client</title>
       <link>https://kynetics.github.io/hawkbit/guides/feignclient/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/guides/feignclient/</guid>
-      <description>&lt;p&gt;In this guide we describe how to create a &lt;a href=&#34;https://github.com/Netflix/feign&#34;&gt;Feign&lt;/a&gt; Rest Client based on a  &lt;a href=&#34;http://projects.spring.io/spring-boot/&#34;&gt;Spring Boot&lt;/a&gt; Application.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this guide we describe how to create a &lt;a href=&#34;https://github.com/Netflix/feign&#34;&gt;Feign&lt;/a&gt; Rest Client based on&#xA;a  &lt;a href=&#34;http://projects.spring.io/spring-boot/&#34;&gt;Spring Boot&lt;/a&gt; Application.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Clustering</title>
       <link>https://kynetics.github.io/hawkbit/guides/clustering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/guides/clustering/</guid>
-      <description>&lt;p&gt;hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to setup your own cluster. You can find additional information in the &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-runtime/hawkbit-update-server/README.md&#34;&gt;hawkBit runtimes&amp;rsquo;s README&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;hawkBit is able to run in a cluster with some constraints. This guide provides insights in the basic concepts and how to&#xA;setup your own cluster. You can find additional information in&#xA;the &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-monolith/hawkbit-update-server/README.md&#34;&gt;hawkBit runtimes&amp;rsquo;s README&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>Custom Theme</title>
-      <link>https://kynetics.github.io/hawkbit/guides/customtheme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kynetics.github.io/hawkbit/guides/customtheme/</guid>
-      <description>&lt;p&gt;This guide provides details about using and creating themes that control the visual look of Eclipse hawkBit Management UI. Theme customization is done using Sass, which is an extension of CSS (Cascading Style Sheets).&lt;/p&gt;</description>
-    </item>
-    
     <item>
       <title>Features</title>
       <link>https://kynetics.github.io/hawkbit/features/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/features/</guid>
-      <description>Device and Software Repository Repository that holds the provisioning targets and assignable software distributions. Targets to be logically grouped by Target Types. That includes a full software update history for every device. Support for pre-commission devices in the repository and plug and play, i.e. device is created if it is authenticated for the first time. Update Management Directly deploy a defined software distribution to a device (by Management UI or API).</description>
+      <description>&lt;h2 id=&#34;device-and-software-repository&#34;&gt;Device and Software Repository&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Repository that holds the provisioning targets and assignable software distributions.&lt;/li&gt;&#xA;&lt;li&gt;Targets to be logically grouped by Target Types.&lt;/li&gt;&#xA;&lt;li&gt;That includes a full software update history for every device.&lt;/li&gt;&#xA;&lt;li&gt;Support for pre-commission devices in the repository and plug and play, i.e. device is created if it is authenticated&#xA;for the first time.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;update-management&#34;&gt;Update Management&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Directly deploy a defined software distribution to a device (by Management API).&lt;/li&gt;&#xA;&lt;li&gt;Update handling is independent of the device type, integration approach or connectivity.&lt;/li&gt;&#xA;&lt;li&gt;Optional user consent flow, download and install updates only after respective end user has confirmed it.&lt;/li&gt;&#xA;&lt;li&gt;Mass cancel the distribution of an update by invalidating the distribution set.&lt;/li&gt;&#xA;&lt;li&gt;Use action status codes for easier analysis.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;artifact-content-delivery&#34;&gt;Artifact Content Delivery&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Partial downloads supported.&lt;/li&gt;&#xA;&lt;li&gt;Download resume supported (RFC7233).&lt;/li&gt;&#xA;&lt;li&gt;Content management by RESTful API and UI (see above).&lt;/li&gt;&#xA;&lt;li&gt;Authorization based on software assignment, i.e. a device can only download what has been assigned to it in the first&#xA;place.&lt;/li&gt;&#xA;&lt;li&gt;Delta artifact hosting supported.&lt;/li&gt;&#xA;&lt;li&gt;Artifact signature hosting supported.&lt;/li&gt;&#xA;&lt;li&gt;Plug-point for artifact encryption allowing to encrypt artifacts on upload.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;rolloutcampaign-management&#34;&gt;Rollout/Campaign Management&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Secure handling of large volumes of devices at rollout creation time.&lt;/li&gt;&#xA;&lt;li&gt;Flexible deployment group definition as part of a rollout.&lt;/li&gt;&#xA;&lt;li&gt;Monitoring of the rollout progress.&lt;/li&gt;&#xA;&lt;li&gt;Emergency rollout shutdown in case of update failures.&lt;/li&gt;&#xA;&lt;li&gt;Manually trigger next rollout group.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;interfaces&#34;&gt;Interfaces&lt;/h2&gt;&#xA;&lt;h3 id=&#34;management-api&#34;&gt;Management API&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;RESTful API&lt;/li&gt;&#xA;&lt;li&gt;Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).&lt;/li&gt;&#xA;&lt;li&gt;Manage and monitor software update operations.&lt;/li&gt;&#xA;&lt;li&gt;Online API documentation.&lt;/li&gt;&#xA;&lt;li&gt;JSON payload with Hypermedia support.&lt;/li&gt;&#xA;&lt;li&gt;Supports filtering, sorting and paging.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;direct-device-integration-api&#34;&gt;Direct Device Integration API&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;RESTful HTTP based API for direct device integration&#xA;&lt;ul&gt;&#xA;&lt;li&gt;JSON payload.&lt;/li&gt;&#xA;&lt;li&gt;Traffic optimized (content based Etag generation, not modified).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Feedback channel from device.&lt;/li&gt;&#xA;&lt;li&gt;TLS encryption.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;device-management-federation-api&#34;&gt;Device Management Federation API&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Indirect device integration through a device management service or application into hawkBit.&lt;/li&gt;&#xA;&lt;li&gt;Optimized for high service to service throughput with &lt;a href=&#34;https://www.rabbitmq.com/amqp-0-9-1-reference.html&#34;&gt;AMQP&lt;/a&gt;&#xA;messaging interface.&lt;/li&gt;&#xA;&lt;li&gt;Separate AMQP vHost per tenant for maximum security.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Authentication</title>
       <link>https://kynetics.github.io/hawkbit/concepts/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/concepts/authentication/</guid>
-      <description>&lt;p&gt;A hawkBit update server can be accessed in four different ways:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; by &lt;strong&gt;targets&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Management API&lt;/em&gt; by 3rd party &lt;strong&gt;applications&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; by 3rd party &lt;strong&gt;applications&lt;/strong&gt; through AMQP.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Management UI&lt;/em&gt; by &lt;strong&gt;users&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;A hawkBit update server can be accessed in four different ways:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; by &lt;strong&gt;targets&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Management API&lt;/em&gt; by 3rd party &lt;strong&gt;applications&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; by 3rd party &lt;strong&gt;applications&lt;/strong&gt; through AMQP.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Authorization</title>
       <link>https://kynetics.github.io/hawkbit/concepts/authorization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/concepts/authorization/</guid>
-      <description>&lt;p&gt;Authorization is handled separately for &lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; and &lt;em&gt;Device Management Federation (DMF) API&lt;/em&gt; (where successful authentication includes full authorization) and &lt;em&gt;Management API&lt;/em&gt; and &lt;em&gt;UI&lt;/em&gt; which is based on Spring security &lt;a href=&#34;https://github.com/eclipse/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java&#34;&gt;authorities&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Authorization is handled separately for &lt;em&gt;Direct Device Integration (DDI) API&lt;/em&gt; and &lt;em&gt;Device Management Federation (DMF)&#xA;API&lt;/em&gt; (where successful authentication includes full authorization) and &lt;em&gt;Management API&lt;/em&gt; and &lt;em&gt;UI&lt;/em&gt; which is based on&#xA;Spring&#xA;security &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java&#34;&gt;authorities&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Data Model</title>
       <link>https://kynetics.github.io/hawkbit/concepts/datamodel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/concepts/datamodel/</guid>
-      <description>&lt;p&gt;The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full blown configuration management on the other.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The hawkBit data model was designed to have enough flexibility to define complex software structures (e.g. operating&#xA;system, runtimes, apps, different kind of artifacts) on one side and simplicity compared to the capabilities of a full&#xA;blown configuration management on the other.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rollout Management</title>
       <link>https://kynetics.github.io/hawkbit/concepts/rollout-management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/concepts/rollout-management/</guid>
       <description>&lt;p&gt;Software update operations in large scale IoT scenarios with hundreds of thousands of devices require special handling.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Target State Machine</title>
       <link>https://kynetics.github.io/hawkbit/concepts/targetstate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/concepts/targetstate/</guid>
-      <description>&lt;p&gt;A target has a current state which reflects the provisioning status of the device at this point in time. State changes are driven either by the update server by means of starting an update or by the controller on the provisioning target that gives feedback to the update server, e.g. &amp;ldquo;I am here&amp;rdquo;, &amp;ldquo;I am working on a provisioning&amp;rdquo;, &amp;ldquo;I have finished a provisioning&amp;rdquo;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;A target has a current state which reflects the provisioning status of the device at this point in time. State changes&#xA;are driven either by the update server by means of starting an update or by the controller on the provisioning target&#xA;that gives feedback to the update server, e.g. &amp;ldquo;I am here&amp;rdquo;, &amp;ldquo;I am working on a provisioning&amp;rdquo;, &amp;ldquo;I have finished a&#xA;provisioning&amp;rdquo;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Architecture</title>
       <link>https://kynetics.github.io/hawkbit/architecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/architecture/</guid>
-      <description>Overview of hawkBit modules and used 3rd party technology: </description>
+      <description>&lt;p&gt;Overview of hawkBit modules and used 3rd party technology:&#xA;&lt;img src=&#34;../images/architecture/architecture.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>Management UI</title>
-      <link>https://kynetics.github.io/hawkbit/ui/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kynetics.github.io/hawkbit/ui/</guid>
-      <description>The hawkBit Management UI provides several views for the different use cases:
-Deployment Management view for target administration and manual deployment. Distribution Management view software repository metadata management. Artifact Management view to manage the artifacts. Target Filter Management view to manage target filters that can be used both in Deployment and Rollout Management views. Rollout Management for large scale rollout orchestration. Deployment Management Purpose Target status overview, target management and manual deployments.</description>
-    </item>
-    
     <item>
       <title>Management API</title>
       <link>https://kynetics.github.io/hawkbit/apis/management_api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/apis/management_api/</guid>
-      <description>&lt;p&gt;The Management API is a RESTful API that enables to perform Create/Read/Update/Delete operations for provisioning targets (i.e. devices) and repository content (i.e. software).&lt;/p&gt;</description>
+      <description>&lt;p&gt;The Management API is a RESTful API that enables to perform Create/Read/Update/Delete operations for provisioning&#xA;targets (i.e. devices) and repository content (i.e. software).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Direct Device Integration API</title>
       <link>https://kynetics.github.io/hawkbit/apis/ddi_api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/apis/ddi_api/</guid>
-      <description>&lt;p&gt;The hawkBit &lt;a href=&#34;https://github.com/eclipse/hawkbit&#34;&gt;update server&lt;/a&gt; provides REST resources which are consumed by the device to retrieve software update tasks.
-This API is based on HTTP standards and a polling mechanism.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The hawkBit &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit&#34;&gt;update server&lt;/a&gt; provides REST resources which are consumed by&#xA;the device to retrieve software update tasks.&#xA;This API is based on HTTP standards and a polling mechanism.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Device Management Federation API</title>
       <link>https://kynetics.github.io/hawkbit/apis/dmf_api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/apis/dmf_api/</guid>
-      <description>&lt;p&gt;The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object. Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.
-Currently, bodies of messages are based on JSON.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The DMF API provides Java classes which allows that the message body can be deserialized at runtime into a Java object.&#xA;Also Java classes can be used to serialize Java objects into JSON bodies to send a message to hawkBit.&#xA;Currently, bodies of messages are based on JSON.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Community</title>
       <link>https://kynetics.github.io/hawkbit/community/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/community/</guid>
-      <description>Presentations Here you can find links to arbitrary material covering Eclipse hawkBit which has been presented at events, conferences and meet-ups.
-09/23/2015 - Eclipse IoT Working Group meeting - slides 04/11/2015 - EclipseCon Europe 2015 - slides 03/09/2016 - EclipseCon North America 2016 - slides 05/16/2016 - Eclipse Virtual IoT Meetup - video - slides 03/20/2017 - Eclipse IoT Day SanJose, CA - video - slides 09/12/2017 - Eclipse IoT Day ThingMonk 2017 - video 01/10/2018 - Eclipse Virtual IoT Meetup - video - slides 10/22/2018 - Community Day EclipseCon Europe 2018 - slides 10/21/2019 - Community Day EclipseCon Europe 2019 - slides 10/19/2020 - Community Day EclipseCon Europe 2020 - slides Articles 10/27/2015 - Why software provisioning goes open source - article 05/25/2016 - jaxenter: Eclipse hawkBit - english - german 09/27/2016 - Eclipse Newsletter - &amp;lsquo;IoT is the new black&amp;rsquo; - article Ask a question Visit stackoverflow.</description>
+      <description>&lt;h2 id=&#34;presentations&#34;&gt;Presentations&lt;/h2&gt;&#xA;&lt;p&gt;Here you can find links to arbitrary material covering Eclipse hawkBit which has been presented at events, conferences&#xA;and meet-ups.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;09/23/2015 - Eclipse IoT Working Group&#xA;meeting - &lt;a href=&#34;https://docs.bosch-iot-rollouts.com/slides/hawkBitProposal20150923.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;04/11/2015 - EclipseCon Europe 2015 - &lt;a href=&#34;https://docs.bosch-iot-rollouts.com/slides/eclipseCon2015.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;03/09/2016 - EclipseCon North America&#xA;2016 - &lt;a href=&#34;https://docs.bosch-iot-rollouts.com/slides/eclipseConNA2016.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;05/16/2016 - Eclipse Virtual IoT&#xA;Meetup - &lt;a href=&#34;https://www.youtube.com/watch?v=g-dhKMaaanE&#34;&gt;video&lt;/a&gt; - &lt;a href=&#34;https://docs.bosch-iot-rollouts.com/slides/virtualIoTMeetup2016.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;03/20/2017 - Eclipse IoT Day SanJose,&#xA;CA - &lt;a href=&#34;https://www.youtube.com/watch?v=x5OfBgnYW44&#34;&gt;video&lt;/a&gt; - &lt;a href=&#34;https://docs.bosch-iot-rollouts.com/slides/iotDaySanJose2017.pdf&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;09/12/2017 - Eclipse IoT Day ThingMonk 2017 - &lt;a href=&#34;https://www.youtube.com/watch?v=7hK-kiQjKGA&#34;&gt;video&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;01/10/2018 - Eclipse Virtual IoT&#xA;Meetup - &lt;a href=&#34;https://www.youtube.com/watch?v=8vcLXs9lc-4&#34;&gt;video&lt;/a&gt; - &lt;a href=&#34;https://docs.bosch-iot-rollouts.com/slides/hawkBitIntroduction.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;10/22/2018 - Community Day EclipseCon Europe&#xA;2018 - &lt;a href=&#34;https://www.eclipse.org/hawkbit/slides/community-day-2018.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;10/21/2019 - Community Day EclipseCon Europe&#xA;2019 - &lt;a href=&#34;https://www.eclipse.org/hawkbit/slides/community-day-2019.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;10/19/2020 - Community Day EclipseCon Europe&#xA;2020 - &lt;a href=&#34;https://www.eclipse.org/hawkbit/slides/community-day-2020.html&#34;&gt;slides&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;articles&#34;&gt;Articles&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;10/27/2015 - Why software provisioning goes open&#xA;source - &lt;a href=&#34;http://blog.bosch-si.com/categories/technology/2015/10/software-provisioning-goes-open-source-find/&#34;&gt;article&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;05/25/2016 - jaxenter: Eclipse&#xA;hawkBit - &lt;a href=&#34;https://jaxenter.com/eclipse-hawkbit-126445.html&#34;&gt;english&lt;/a&gt; - &lt;a href=&#34;https://jaxenter.de/eclipse-hawkbit-46372&#34;&gt;german&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;09/27/2016 - Eclipse Newsletter - &amp;lsquo;IoT is the new&#xA;black&amp;rsquo; - &lt;a href=&#34;http://www.eclipse.org/community/eclipse_newsletter/2016/september/article2.php&#34;&gt;article&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ask-a-question&#34;&gt;Ask a question&lt;/h2&gt;&#xA;&lt;p&gt;Visit &lt;a href=&#34;https://stackoverflow.com/questions/tagged/eclipse-hawkbit&#34;&gt;stackoverflow.com&lt;/a&gt; to find questions or raise your&#xA;own tagged with &lt;code&gt;eclipse-hawkbit&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>0.4.1 Release</title>
+      <link>https://kynetics.github.io/hawkbit/blog/2024-01-16-0.4.1-release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kynetics.github.io/hawkbit/blog/2024-01-16-0.4.1-release/</guid>
+      <description>&lt;p&gt;In this article, we want to give an overview of the 0.4.1 hawkBit release (Friday, January 12, 2024)&lt;/p&gt;&#xA;&lt;h2 id=&#34;hawkbit-041httpsgithubcomeclipse-hawkbithawkbitreleasestag041-release&#34;&gt;hawkBit &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.4.1&#34;&gt;0.4.1&lt;/a&gt; release&lt;/h2&gt;&#xA;&lt;h3 id=&#34;steps-towards-removal-of-the-legacy-vaadin8-based-ui&#34;&gt;Steps towards removal of the legacy Vaadin8-based UI&lt;/h3&gt;&#xA;&lt;p&gt;As announced at &lt;a href=&#34;2023-11-22-vaadin8_ui_discontinuation.md&#34;&gt;Vaadin 8 UI discontinuation&lt;/a&gt; the current Vaadin 8 based UI&#xA;will be removed. This release will likely be the last one including it. Some steps are taken to mitigate this.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;First of all, this release&#xA;introduces &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/tree/0.4.1/hawkbit-runtime/hawkbit-simple-ui&#34;&gt;Simple UI&lt;/a&gt; - a&#xA;demo/PoC level UI. It includes the most essential functionality allowing you to play around with hawkBit. It could not&#xA;be compared to legacy UI in features and maturity in any case. Some notes for it:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Status&lt;/em&gt; - as already said - low maturity and very feature-limited, &lt;em&gt;EXPERIMENTAL&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;Intended for demo/play-around purposes. It could become an initial version of a new hawkBit UI but currently,&#xA;there are no resources for further development. Any contribution to this UI in the direction of making it a&#xA;full-fledged mature UI is welcome!&lt;/li&gt;&#xA;&lt;li&gt;It provides features like - create software modules &amp;amp; distribution sets, targets, and rollouts&lt;/li&gt;&#xA;&lt;li&gt;In contrast with legacy UI the new UI is a standalone application and uses only REST API to provide functionality&#xA;to the user.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;To the legacy monolith update server application there is added a new microservice-based application. As part of this&#xA;effort, there was introduced an example&#xA;of &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/tree/0.4.1/hawkbit-runtime/hawkbit-vv8-ui&#34;&gt;legacy Vaadin 8 UI standalone application&lt;/a&gt;.&#xA;This legacy UI standalone application could be used together with future hawkBit update server versions as long as it&#xA;is compatible and on the user&amp;rsquo;s responsibility. Some notes for it:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;NOT RECOMMENDED&lt;/em&gt; - it might contain security vulnerabilities and bugs. It could be hard to verify its&#xA;compatibility with the new hawkBit versions.&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;ON USER&amp;rsquo;s RESPONSIBILITY&lt;/em&gt; - no guarantees of any kind are provided for that application. It is entirely the&#xA;user&amp;rsquo;s responsibility to test, scan for vulnerabilities, and use it.&lt;/li&gt;&#xA;&lt;li&gt;Provides an option to use the legacy Vaadin 8 UI with the new hawkBit versions under the conditions above&lt;/li&gt;&#xA;&lt;li&gt;It uses directly the database and legacy update server code&lt;/li&gt;&#xA;&lt;li&gt;It includes the outdated Spring Boot 2.7 which is after its end of support&lt;/li&gt;&#xA;&lt;li&gt;It will not be developed any further and new features won&amp;rsquo;t be available&lt;/li&gt;&#xA;&lt;li&gt;No bugfixes would be provided for it&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;extended-access-control-management---entity-based&#34;&gt;Extended access control management - entity-based&lt;/h3&gt;&#xA;&lt;p&gt;There is a new feature implemented in access control management. Up until now, permissions (e.g. CREATE_TARGET) were&#xA;assigned to the users, and based on that users were able to execute some action or not. Now there is added a pluggable&#xA;mechanism&#xA;via &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/blob/0.4.1/hawkbit-repository/hawkbit-repository-jpa/src/main/java/org/eclipse/hawkbit/repository/jpa/acm/AccessController.java&#34;&gt;AccessController&lt;/a&gt;&#xA;that allows to further restrict the access based on the entity. For instance, a developer could implement its custom&#xA;access controller for targets that, depending on the user, could grant or reject permissions for accessing targets of&#xA;certain target types.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vaadin 8 UI discontinuation</title>
+      <link>https://kynetics.github.io/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kynetics.github.io/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</guid>
+      <description>&lt;p&gt;In this article, we want to give an overview of the future of the hawkBit UI&lt;/p&gt;&#xA;&lt;h2 id=&#34;hawkbit-vaadin-8-ui-discontinuation&#34;&gt;hawkBit Vaadin 8 UI discontinuation&lt;/h2&gt;&#xA;&lt;p&gt;The hawkBit UI uses Vaadin as a web UI framework. It uses Vaadin 8 (8.14.3). This major version,&#xA;according &lt;a href=&#34;https://vaadin.com/roadmap&#34;&gt;Vaadin Roadmap&lt;/a&gt;, has no free support since 21st Feb 2022. There are some version&#xA;releases after that date (8.15.0 - 8.16.0) that are Apache 2.0 licensed. However, since&#xA;8.16.1 (&lt;a href=&#34;https://mvnrepository.com/artifact/com.vaadin/vaadin-server&#34;&gt;see here&lt;/a&gt;) the license&#xA;is &lt;a href=&#34;https://vaadin.com/license/cvdl-4.0&#34;&gt;Commercial Vaadin Developer License 4.0&lt;/a&gt;, so they could not be used in hawkBit.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eclipse hawkBit upgrade to Eclipse Public License - v 2.0</title>
+      <link>https://kynetics.github.io/hawkbit/blog/2023-09-21-epl2.0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kynetics.github.io/hawkbit/blog/2023-09-21-epl2.0/</guid>
+      <description>&lt;p&gt;hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well&#xA;as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT&#xA;since 2015.&lt;/p&gt;&#xA;&lt;p&gt;In this article, we want to give an overview of the latest highlights of hawkBit license changes.&lt;/p&gt;&#xA;&lt;h2 id=&#34;hawkbit-license-upgraded-to-eclipse-public-license---v-20&#34;&gt;hawkBit license upgraded to Eclipse Public License - v 2.0&lt;/h2&gt;&#xA;&lt;p&gt;Based on the issues&#xA;&lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/issues/1393&#34;&gt;Switch to EPL 2.0 License&lt;/a&gt; and&#xA;&lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/issues/1008&#34;&gt;Update hawkBit&amp;rsquo;s license to EPL 2.0&lt;/a&gt;&#xA;the hawkBit license is upgraded&#xA;from &lt;a href=&#34;http://www.eclipse.org/org/documents/epl-v10.php&#34;&gt;Eclipse Public License - Version 1.0&lt;/a&gt; to&#xA;&lt;a href=&#34;https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt&#34;&gt;Eclipse Public License - v 2.0&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Release notes</title>
       <link>https://kynetics.github.io/hawkbit/release-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://kynetics.github.io/hawkbit/release-notes/</guid>
-      <description>0.3.0 Release Date: Friday, November 17, 2023 Hawkbit: Tag / Release Extensions: Tag
-0.3.0M9 Release Date: Thursday, August 24, 2023 Hawkbit: Tag / Release Extensions: Tag
-0.3.0M8 Release Date: Friday, April 21, 2023 Hawkbit: Tag / Release Extensions: Tag / Release
-0.3.0M7 Release Date: Monday, February 15, 2021 Hawkbit: Tag / Release Extensions: Tag / Release
-0.3.0M6 Release Date: Friday, January 17, 2020 Tag / Release
-0.3.0M5 Release Date: Tuesday, July 29, 2019 Tag / Release</description>
+      <description>&lt;h2 id=&#34;080&#34;&gt;0.8.0&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Release Date:&lt;/strong&gt; Tuesday, March 11, 2025 &lt;br /&gt;&#xA;Hawkbit: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.8.0&#34;&gt;Tag&lt;/a&gt; /&#xA;&lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/milestone/29&#34;&gt;Release&lt;/a&gt; &lt;br /&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;070&#34;&gt;0.7.0&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Release Date:&lt;/strong&gt; Thursday, January 16, 2025 &lt;br /&gt;&#xA;Hawkbit: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.7.0&#34;&gt;Tag&lt;/a&gt; /&#xA;&lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/milestone/28&#34;&gt;Release&lt;/a&gt; &lt;br /&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;061&#34;&gt;0.6.1&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Release Date:&lt;/strong&gt; Wednesday, October 30, 2024 &lt;br /&gt;&#xA;Hawkbit: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.6.1&#34;&gt;Tag&lt;/a&gt; /&#xA;&lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/milestone/27&#34;&gt;Release&lt;/a&gt; &lt;br /&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;050&#34;&gt;0.5.0&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Release Date:&lt;/strong&gt; Friday, March 22, 2024 &lt;br /&gt;&#xA;Hawkbit: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.5.0&#34;&gt;Tag&lt;/a&gt; /&#xA;&lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/milestone/26&#34;&gt;Release&lt;/a&gt; &lt;br /&gt;&#xA;Extensions: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit-extensions/releases/tag/0.5.0&#34;&gt;Tag&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;041&#34;&gt;0.4.1&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Release Date:&lt;/strong&gt; Friday, January 12, 2024 &lt;br /&gt;&#xA;Hawkbit: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.4.1&#34;&gt;Tag&lt;/a&gt; /&#xA;&lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/milestone/25&#34;&gt;Release&lt;/a&gt; &lt;br /&gt;&#xA;Extensions: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit-extensions/releases/tag/0.4.1&#34;&gt;Tag&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;030&#34;&gt;0.3.0&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Release Date:&lt;/strong&gt; Friday, November 17, 2023 &lt;br /&gt;&#xA;Hawkbit: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.3.0&#34;&gt;Tag&lt;/a&gt; /&#xA;&lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/milestone/11&#34;&gt;Release&lt;/a&gt;  &lt;br /&gt;&#xA;Extensions: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit-extensions/releases/tag/0.3.0&#34;&gt;Tag&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;030m9&#34;&gt;0.3.0M9&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Release Date:&lt;/strong&gt; Thursday, August 24, 2023 &lt;br /&gt;&#xA;Hawkbit: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.3.0M9&#34;&gt;Tag&lt;/a&gt; /&#xA;&lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit/milestone/24&#34;&gt;Release&lt;/a&gt;  &lt;br /&gt;&#xA;Extensions: &lt;a href=&#34;https://github.com/eclipse-hawkbit/hawkbit-extensions/releases/tag/0.3.0M9&#34;&gt;Tag&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
-      <title>Sandbox</title>
-      <link>https://kynetics.github.io/hawkbit/sandbox/</link>
+      <title>Eclipse hawkBit 0.2.0 - First Release</title>
+      <link>https://kynetics.github.io/hawkbit/blog/2018-07-26-first-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kynetics.github.io/hawkbit/sandbox/</guid>
-      <description></description>
+      <guid>https://kynetics.github.io/hawkbit/blog/2018-07-26-first-release/</guid>
+      <description>&lt;p&gt;hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well&#xA;as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT&#xA;since 2015 and with version &lt;em&gt;0.2.0&lt;/em&gt; a first release is available.&lt;/p&gt;&#xA;&lt;p&gt;In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get&#xA;started in seconds.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

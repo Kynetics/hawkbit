@@ -2,10 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kynetics.github.io/hawkbit/news/2018-07-26-first-release/</loc>
-  </url><url>
-    <loc>https://kynetics.github.io/hawkbit/news/2023-09-21-epl2.0/</loc>
-  </url><url>
     <loc>https://kynetics.github.io/hawkbit/whatishawkbit/</loc>
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/gettingstarted/</loc>
@@ -15,8 +11,6 @@
     <loc>https://kynetics.github.io/hawkbit/guides/feignclient/</loc>
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/guides/clustering/</loc>
-  </url><url>
-    <loc>https://kynetics.github.io/hawkbit/guides/customtheme/</loc>
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/features/</loc>
   </url><url>
@@ -32,8 +26,6 @@
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/architecture/</loc>
   </url><url>
-    <loc>https://kynetics.github.io/hawkbit/ui/</loc>
-  </url><url>
     <loc>https://kynetics.github.io/hawkbit/apis/management_api/</loc>
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/apis/ddi_api/</loc>
@@ -42,15 +34,19 @@
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/community/</loc>
   </url><url>
+    <loc>https://kynetics.github.io/hawkbit/blog/2024-01-16-0.4.1-release/</loc>
+  </url><url>
+    <loc>https://kynetics.github.io/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/</loc>
+  </url><url>
+    <loc>https://kynetics.github.io/hawkbit/blog/2023-09-21-epl2.0/</loc>
+  </url><url>
     <loc>https://kynetics.github.io/hawkbit/release-notes/</loc>
   </url><url>
-    <loc>https://kynetics.github.io/hawkbit/news/</loc>
-    <priority>0</priority>
-  </url><url>
-    <loc>https://kynetics.github.io/hawkbit/rest-api/</loc>
-    <priority>0</priority>
+    <loc>https://kynetics.github.io/hawkbit/blog/2018-07-26-first-release/</loc>
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/apis/</loc>
+  </url><url>
+    <loc>https://kynetics.github.io/hawkbit/blog/</loc>
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/categories/</loc>
   </url><url>
@@ -59,8 +55,6 @@
     <loc>https://kynetics.github.io/hawkbit/</loc>
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/guides/</loc>
-  </url><url>
-    <loc>https://kynetics.github.io/hawkbit/sandbox/</loc>
   </url><url>
     <loc>https://kynetics.github.io/hawkbit/tags/</loc>
   </url>

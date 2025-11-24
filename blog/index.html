@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Authorization - Eclipse hawkBit</title>
+    <title>Blogs - Eclipse hawkBit</title>
     <meta name="generator" content="Hugo 0.142.0">
 
     
     <meta name="description" content="IoT. Update. Device.">
     
-    <link rel="canonical" href="https://kynetics.github.io/hawkbit/concepts/authorization/">
+    <link rel="canonical" href="https://kynetics.github.io/hawkbit/blog/">
     
     <meta name="author" content="The Eclipse hawkBit Project">
     
 
-    <meta property="og:url" content="https://kynetics.github.io/hawkbit/concepts/authorization/">
+    <meta property="og:url" content="https://kynetics.github.io/hawkbit/blog/">
     <meta property="og:title" content="Eclipse hawkBit">
     <meta property="og:image" content="https://kynetics.github.io/hawkbit/images/hawkbit_icon.png">
     <meta name="apple-mobile-web-app-title" content="Eclipse hawkBit">
@@ -76,6 +76,9 @@
     <script src="//www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
 
     
+    <link href="%7balternate%20%7brss%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%20false%20false%200%7d%20/hawkbit/blog/index.xml%20https://kynetics.github.io/hawkbit/blog/index.xml%7d" rel="alternate" type="application/rss+xml" title="Eclipse hawkBit" />
+    <link href="%7balternate%20%7brss%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%20false%20false%200%7d%20/hawkbit/blog/index.xml%20https://kynetics.github.io/hawkbit/blog/index.xml%7d" rel="feed" type="application/rss+xml" title="Eclipse hawkBit" />
+    
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
@@ -83,8 +86,8 @@
 
 
 
-	
-	
+  
+  
 
 
 <div class="backdrop">
@@ -105,7 +108,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Authorization
+        Blogs
       </div>
     </div>
 
@@ -319,11 +322,14 @@
 
 
 
-<a  title="Blog" href="/hawkbit/blog/">
+<a class="current" title="Blog" href="/hawkbit/blog/">
 	
 	Blog
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
   
 </li>
@@ -387,147 +393,110 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Authorization </h1>
+			<h1>Pages in Blogs</h1>
 
-			<p>Authorization is handled separately for <em>Direct Device Integration (DDI) API</em> and <em>Device Management Federation (DMF)
-API</em> (where successful authentication includes full authorization) and <em>Management API</em> and <em>UI</em> which is based on
-Spring
-security <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-security-core/src/main/java/org/eclipse/hawkbit/im/authentication/SpPermission.java">authorities</a>.</p>
-<p>However, keep in mind that hawkBit does not offer an off the shelf authentication provider to leverage these permissions
-and the underlying multi user/tenant capabilities of hawkBit but it supports authentication providers offering an OpenID
-Connect interface. Check out <a href="http://projects.spring.io/spring-security/">Spring security documentation</a> for further
-information. In
-hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/master/hawkbit-autoconfigure/src/main/java/org/eclipse/hawkbit/autoconfigure/security/SecurityAutoConfiguration.java">SecurityAutoConfiguration</a>
-is a good starting point for integration.</p>
-<p>The default implementation is single user/tenant with basic auth and the logged in user is provided with all
-permissions. Additionally, the application properties may be configured for multiple static users;
-see <a href="#multiple-users">Multiple Users</a> for details.</p>
-<h2 id="ddi-api">DDI API</h2>
-<p>An authenticated target is permitted to:</p>
-<ul>
-<li>retrieve commands from the server</li>
-<li>provide feedback to the the server</li>
-<li>download artifacts that are assigned to it</li>
-</ul>
-<p>A target might be permitted to download artifacts without authentication (if enabled, see above). Only the download can
-be permitted to disable the authentication. This can be used in scenarios where the artifacts itself are e.g. signed and
-secured.</p>
-<h2 id="management-api-and-ui">Management API and UI</h2>
-<h3 id="multiple-users">Multiple Users</h3>
-<p>hawkBit optionally supports configuring multiple static users through the application properties. In this case, the user
-and password Spring security properties are ignored.
-An example configuration is given below.</p>
-<pre><code>hawkbit.server.im.users[0].username=admin
-hawkbit.server.im.users[0].password={noop}admin
-hawkbit.server.im.users[0].firstname=Test
-hawkbit.server.im.users[0].lastname=Admin
-hawkbit.server.im.users[0].email=admin@test.de
-hawkbit.server.im.users[0].permissions=ALL
+			
+			<a href="https://kynetics.github.io/hawkbit/blog/2024-01-16-0.4.1-release/" title="0.4.1 Release">
+				<h2>0.4.1 Release</h2>
+			</a>
 
-hawkbit.server.im.users[1].username=test
-hawkbit.server.im.users[1].password={noop}test
-hawkbit.server.im.users[1].firstname=Test
-hawkbit.server.im.users[1].lastname=Tester
-hawkbit.server.im.users[1].email=test@tester.com
-hawkbit.server.im.users[1].permissions=READ_TARGET,UPDATE_TARGET,CREATE_TARGET,DELETE_TARGET
-</code></pre>
-<p>A permissions value of <code>ALL</code> will provide that user with all possible permissions. Passwords need to be specified with
-the used password encoder in brackets. In this example, <code>noop</code> is used as the plaintext encoder. For production use, it
-is recommended to use a hash function designed for passwords such as <em>bcrypt</em>. See
-this <a href="https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-format">blog post</a> for more
-information on password encoders in Spring Security.</p>
-<h3 id="openid-connect">OpenID Connect</h3>
-<p>hawkbit supports authentication providers which use the OpenID Connect standard, an authentication layer built on top of
-the OAuth 2.0 protocol.
-An example configuration is given below.</p>
-<pre><code>spring.security.oauth2.client.registration.oidc.client-id=clientID
-spring.security.oauth2.client.provider.oidc.issuer-uri=https://oidc-provider/issuer-uri
-spring.security.oauth2.client.provider.oidc.jwk-set-uri=https://oidc-provider/jwk-set-uri
-</code></pre>
-<p>Note: at the moment only DEFAULT tenant is supported. By default the resource_access/<client id>/roles claim is mapped
-to hawkBit permissions.</p>
-<h3 id="delivered-permissions">Delivered Permissions</h3>
+			<br>
+			<p>In this article, we want to give an overview of the 0.4.1 hawkBit release (Friday, January 12, 2024)</p>
+<h2 id="hawkbit-041httpsgithubcomeclipse-hawkbithawkbitreleasestag041-release">hawkBit <a href="https://github.com/eclipse-hawkbit/hawkbit/releases/tag/0.4.1">0.4.1</a> release</h2>
+<h3 id="steps-towards-removal-of-the-legacy-vaadin8-based-ui">Steps towards removal of the legacy Vaadin8-based UI</h3>
+<p>As announced at <a href="2023-11-22-vaadin8_ui_discontinuation.md">Vaadin 8 UI discontinuation</a> the current Vaadin 8 based UI
+will be removed. This release will likely be the last one including it. Some steps are taken to mitigate this.</p>
 <ul>
-<li>
-<p>READ_/UPDATE_/CREATE_/DELETE_TARGET for:</p>
+<li>First of all, this release
+introduces <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/0.4.1/hawkbit-runtime/hawkbit-simple-ui">Simple UI</a> - a
+demo/PoC level UI. It includes the most essential functionality allowing you to play around with hawkBit. It could not
+be compared to legacy UI in features and maturity in any case. Some notes for it:
 <ul>
-<li>Target entities including metadata (that includes also the installed and assigned distribution sets)</li>
-<li>Target tags</li>
-<li>Target actions</li>
-<li>Target registration rules</li>
-<li>Bulk operations</li>
-<li>Target filters</li>
+<li><em>Status</em> - as already said - low maturity and very feature-limited, <em>EXPERIMENTAL</em></li>
+<li>Intended for demo/play-around purposes. It could become an initial version of a new hawkBit UI but currently,
+there are no resources for further development. Any contribution to this UI in the direction of making it a
+full-fledged mature UI is welcome!</li>
+<li>It provides features like - create software modules &amp; distribution sets, targets, and rollouts</li>
+<li>In contrast with legacy UI the new UI is a standalone application and uses only REST API to provide functionality
+to the user.</li>
 </ul>
 </li>
-<li>
-<p>READ_/UPDATE_/CREATE_/DELETE_REPOSITORY for:</p>
+<li>To the legacy monolith update server application there is added a new microservice-based application. As part of this
+effort, there was introduced an example
+of <a href="https://github.com/eclipse-hawkbit/hawkbit/tree/0.4.1/hawkbit-runtime/hawkbit-vv8-ui">legacy Vaadin 8 UI standalone application</a>.
+This legacy UI standalone application could be used together with future hawkBit update server versions as long as it
+is compatible and on the user&rsquo;s responsibility. Some notes for it:
 <ul>
-<li>Distribution sets</li>
-<li>Software Modules</li>
-<li>Artifacts</li>
-<li>DS tags</li>
-</ul>
-</li>
-<li>
-<p>READ_TARGET_SECURITY_TOKEN</p>
-<ul>
-<li>Permission to read the target security token. The security token is security concerned and should be protected.</li>
-</ul>
-</li>
-<li>
-<p>DOWNLOAD_REPOSITORY_ARTIFACT</p>
-<ul>
-<li>Permission to download artifacts of a software module (Note: READ_REPOSITORY allows only to read the metadata).</li>
-</ul>
-</li>
-<li>
-<p>TENANT_CONFIGURATION</p>
-<ul>
-<li>Permission to administrate the tenant settings.</li>
-</ul>
-</li>
-<li>
-<p>READ_/UPDATE_/CREATE_/DELETE_/HANDLE_/APPROVE_ROLLOUT for:</p>
-<ul>
-<li>Managing rollouts and provision targets through a rollout.</li>
+<li><em>NOT RECOMMENDED</em> - it might contain security vulnerabilities and bugs. It could be hard to verify its
+compatibility with the new hawkBit versions.</li>
+<li><em>ON USER&rsquo;s RESPONSIBILITY</em> - no guarantees of any kind are provided for that application. It is entirely the
+user&rsquo;s responsibility to test, scan for vulnerabilities, and use it.</li>
+<li>Provides an option to use the legacy Vaadin 8 UI with the new hawkBit versions under the conditions above</li>
+<li>It uses directly the database and legacy update server code</li>
+<li>It includes the outdated Spring Boot 2.7 which is after its end of support</li>
+<li>It will not be developed any further and new features won&rsquo;t be available</li>
+<li>No bugfixes would be provided for it</li>
 </ul>
 </li>
 </ul>
-<h3 id="permission-matrix-for-example-uses-cases-that-need-more-than-one-permission">Permission Matrix for example uses cases that need more than one permission</h3>
-<table>
-  <thead>
-      <tr>
-          <th>Use Case</th>
-          <th>Needed permissions</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Search <em>targets</em> by installed or assigned <em>distribution set</em></td>
-          <td>READ_REPOSITORY, READ_TARGET</td>
-      </tr>
-      <tr>
-          <td>Assign <em>DS</em> to a <em>target</em></td>
-          <td>READ_REPOSITORY, UPDATE_TARGET</td>
-      </tr>
-      <tr>
-          <td>Assign DS to target through a <em>Rollout</em>, i.e. <em>Rollout</em> creation and start</td>
-          <td>READ_REPOSITORY, READ_TARGET, READ_ROLLOUT, CREATE_ROLLOUT, HANDLE_ROLLOUT</td>
-      </tr>
-      <tr>
-          <td>Read <em>Rollout</em> status including its <em>deployment groups</em></td>
-          <td>READ_REPOSITORY, READ_ROLLOUT</td>
-      </tr>
-      <tr>
-          <td>Checks <em>targets</em> inside <em>Rollout deployment group</em></td>
-          <td>READ_REPOSITORY, READ_TARGET, READ_ROLLOUT</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="device-management-federation-api">Device Management Federation API</h2>
-<p>The provided <em>RabbitMQ</em> <a href="https://www.rabbitmq.com/access-control.html">vhost and user</a> should be provided with the
-necessary permissions to send messages to hawkBit through the exchange and receive messages from it through the
-specified queue.</p>
+<h3 id="extended-access-control-management---entity-based">Extended access control management - entity-based</h3>
+<p>There is a new feature implemented in access control management. Up until now, permissions (e.g. CREATE_TARGET) were
+assigned to the users, and based on that users were able to execute some action or not. Now there is added a pluggable
+mechanism
+via <a href="https://github.com/eclipse-hawkbit/hawkbit/blob/0.4.1/hawkbit-repository/hawkbit-repository-jpa/src/main/java/org/eclipse/hawkbit/repository/jpa/acm/AccessController.java">AccessController</a>
+that allows to further restrict the access based on the entity. For instance, a developer could implement its custom
+access controller for targets that, depending on the user, could grant or reject permissions for accessing targets of
+certain target types.</p> <br><a href="https://kynetics.github.io/hawkbit/blog/2024-01-16-0.4.1-release/">[...]</a>
+
+			<hr>
+			
+			<a href="https://kynetics.github.io/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/" title="Vaadin 8 UI discontinuation">
+				<h2>Vaadin 8 UI discontinuation</h2>
+			</a>
+
+			<br>
+			<p>In this article, we want to give an overview of the future of the hawkBit UI</p>
+<h2 id="hawkbit-vaadin-8-ui-discontinuation">hawkBit Vaadin 8 UI discontinuation</h2>
+<p>The hawkBit UI uses Vaadin as a web UI framework. It uses Vaadin 8 (8.14.3). This major version,
+according <a href="https://vaadin.com/roadmap">Vaadin Roadmap</a>, has no free support since 21st Feb 2022. There are some version
+releases after that date (8.15.0 - 8.16.0) that are Apache 2.0 licensed. However, since
+8.16.1 (<a href="https://mvnrepository.com/artifact/com.vaadin/vaadin-server">see here</a>) the license
+is <a href="https://vaadin.com/license/cvdl-4.0">Commercial Vaadin Developer License 4.0</a>, so they could not be used in hawkBit.</p> <br><a href="https://kynetics.github.io/hawkbit/blog/2023-11-22-vaadin8_ui_discontinuation/">[...]</a>
+
+			<hr>
+			
+			<a href="https://kynetics.github.io/hawkbit/blog/2023-09-21-epl2.0/" title="Eclipse hawkBit upgrade to Eclipse Public License - v 2.0">
+				<h2>Eclipse hawkBit upgrade to Eclipse Public License - v 2.0</h2>
+			</a>
+
+			<br>
+			<p>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well
+as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT
+since 2015.</p>
+<p>In this article, we want to give an overview of the latest highlights of hawkBit license changes.</p>
+<h2 id="hawkbit-license-upgraded-to-eclipse-public-license---v-20">hawkBit license upgraded to Eclipse Public License - v 2.0</h2>
+<p>Based on the issues
+<a href="https://github.com/eclipse-hawkbit/hawkbit/issues/1393">Switch to EPL 2.0 License</a> and
+<a href="https://github.com/eclipse-hawkbit/hawkbit/issues/1008">Update hawkBit&rsquo;s license to EPL 2.0</a>
+the hawkBit license is upgraded
+from <a href="http://www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License - Version 1.0</a> to
+<a href="https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt">Eclipse Public License - v 2.0</a>.</p> <br><a href="https://kynetics.github.io/hawkbit/blog/2023-09-21-epl2.0/">[...]</a>
+
+			<hr>
+			
+			<a href="https://kynetics.github.io/hawkbit/blog/2018-07-26-first-release/" title="Eclipse hawkBit 0.2.0 - First Release">
+				<h2>Eclipse hawkBit 0.2.0 - First Release</h2>
+			</a>
+
+			<br>
+			<p>hawkBit is a domain-independent back-end framework for rolling out software updates to constrained edge devices as well
+as more powerful controllers and gateways connected to IP based networking infrastructure. It is part of the Eclipse IoT
+since 2015 and with version <em>0.2.0</em> a first release is available.</p>
+<p>In this article, we want to give an overview of the latest highlights of hawkBit and let you know how you can get
+started in seconds.</p> <br><a href="https://kynetics.github.io/hawkbit/blog/2018-07-26-first-release/">[...]</a>
+
+			<hr>
+			
 
 			<aside class="copyright" role="note">
   <div class="logo">
@@ -563,57 +532,6 @@ specified queue.</p>
   </p>
 </aside>
 
-
-			<footer class="footer">
-				
-
-<nav class="pagination" aria-label="Footer">
-  <div class="previous">
-  
-      <a href="https://kynetics.github.io/hawkbit/concepts/datamodel/" title="Data Model">
-        <span class="direction">
-          Previous
-        </span>
-        <div class="page">
-          <div class="button button-previous" role="button" aria-label="Previous">
-            <i class="icon icon-back"></i>
-          </div>
-          <div class="stretch">
-            <div class="title">
-              Data Model
-            </div>
-          </div>
-        </div>
-      </a>
-  
-  </div>
-
-  <div class="next">
-  
-      <a href="https://kynetics.github.io/hawkbit/concepts/authentication/" title="Authentication">
-        <span class="direction">
-          Next
-        </span>
-        <div class="page">
-          <div class="stretch">
-            <div class="title">
-              Authentication
-            </div>
-          </div>
-          <div class="button button-next" role="button" aria-label="Next">
-            <i class="icon icon-forward"></i>
-          </div>
-        </div>
-      </a>
-  
-  </div>
-</nav>
-
-
-
-
-
-			</footer>
 		</div>
 	</article>
 
@@ -682,4 +600,3 @@ specified queue.</p>
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
-
